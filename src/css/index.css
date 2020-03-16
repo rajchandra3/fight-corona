@@ -1,0 +1,108 @@
+a:hover{
+    text-decoration: none;
+}
+.centered{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container-fluid,.row{
+    margin: 0px !important;
+    padding: 0px !important;
+}
+.no-margin{
+    margin: 0px !important;
+}
+.no-padding{
+    padding: 0px !important;
+}
+.main-header{
+    padding: 2rem;
+    text-align: center;
+    font-size: 2rem;
+    background: #00b389;
+}
+.gbl-status-container,.gbl-timeline-container,.country-status-container,.country-timeline-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.header{
+    padding: 2rem;
+    text-align: center;
+    font-size: 2rem;
+}
+.content-container{
+    margin: 2rem;
+    padding: 3rem;
+    text-align: center;
+    display: inline-block;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.content-container::after {
+  border-radius: 5px;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.content-container:hover {
+  -webkit-transform: scale(1.25, 1.25);
+  transform: scale(1.25, 1.25);
+}
+
+.content-container:hover::after {
+    opacity: 1;
+}
+.text-large{
+    font-size: 48px;
+    font-weight: 900;
+    padding-right: 0.5rem;
+    font-family: monospace;
+}
+.gov-link-container{
+    padding: 10rem 0 10rem 0;
+}
+.pre-footer{
+    font-size: 20px;
+}
+.white-icons{
+    filter:  brightness(0) invert(1);
+}
+
+/* background colors */
+.bg-peter-river{
+    background-color: #3498db;
+    /* color: #ffffff; */
+}
+.bg-turquoise{
+    background-color: #1abc9c;
+    /* color: #ffffff; */
+}
+.bg-carrot{
+    background-color: #e67e22;
+    /* color: #ffffff; */
+}
+.bg-wet-asphalt{
+    background-color: #34495e;
+}
+.bg-clouds{
+    background-color: #ecf0f1;
+}
+.bg-emerald{
+    background-color: #2ecc71;
+    color: #ecf0f1;
+}
