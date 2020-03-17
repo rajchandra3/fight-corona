@@ -56,9 +56,12 @@
     <link rel="apple-touch-icon" href="src/images/icons/icon-512x512.png" />
     <meta name="apple-mobile-web-app-status-bar" content="#302b63" />
     <title>कोरोनावायरस जागरूकता अभियान 🦇</title>
+    <link rel="icon" href="./src/images/favicon.png" type="image/png" sizes="16x16">
 
     <!-- import css -->
     <link rel="stylesheet" href="./src/css/index.css">
+    <link rel='stylesheet' media='screen and (min-width: 0px) and (max-width: 576px)' href='./src/css/mobile.css' />
+    <!-- <link rel='stylesheet' media='screen and (min-width: 577px)' href='/stylesheets/css/large.css' /> -->
 
     <!-- import bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -68,6 +71,16 @@
 
     <!-- load chart library -->
     <script src="https://code.highcharts.com/highcharts.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-99147431-11"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-99147431-11');
+    </script>
 
 </head>
 <body>
@@ -161,7 +174,7 @@
                 </div>
                 <div class="col-xs-3 col-sm-3 content-container">
                     <div class="text-container text-large country-status-total-unresolved"></div>
-                    <div class="text-container text-small">कुल अस्वस्थ मरीज</div>
+                    <div class="text-container text-small">कुल अनसुलझे मामले</div>
                 </div>
             </div>
 
@@ -177,18 +190,17 @@
             </div>
 
             <!-- do's and dont's based on language -->
-            <div class="col-lg-12 pdf-container no-padding no-margin">
-                <iframe 
-                    src="./src/documents/prevention_measures/hindi_dos_donts.pdf" 
+            <div class="col-xs-12 col-sm-12 pdf-container centered no-padding no-margin">
+                <img 
+                    src="./src/documents/prevention_measures/hindi_dos_donts.png" 
                     width="100%" 
-                    height="700px">
-                </iframe>
+                    height="auto">
             </div>
 
             <!-- cta to mohfw.gov.in -->
             <div class="col-lg-12 gov-link-container text-center bg-emerald">
                 <p class="header">भारत सरकार द्वारा जारी की गई पूरी जानकारी पढ़ने के लिए यहां क्लिक करें। </p>
-                <p class="header"><span>&#128071;&#127997;</span></p>
+                <p class="header"><span class="text-large">&#128071;&#127997;</span></p>
                 <a href="https://www.mohfw.gov.in" class="no-decore">
                     <button class="btn btn-light">
                         <b><u>www.mohfw.gov.in</u></b>
@@ -196,11 +208,41 @@
                 </a>
             </div>
 
+            <!-- global top infected contries -->
+            <div class="col-lg-12 no-padding no-margin">
+                <table class="table table-striped no-margin">
+                    <thead class="bg-dark text-white">
+                        <tr>
+                            <th scope="col">देश</th>
+                            <th scope="col">कुल मामले</th>
+                            <th scope="col">आज के मामले</th>
+                            <th scope="col">कुल मौतें</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Appeal -->
+            <div class="col-lg-12 no-padding">
+                <div class="jumbotron jumbotron-fluid no-margin">
+                    <div class="container">
+                    <h1 class="display-4">ध्यान रखें, सुरक्षित रहें</h1>
+                    <!-- <div class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</div> -->
+                    </div>
+                </div>
+            </div>
             <!-- footer -->
             <div class="col-lg-12 bg-dark">
-                <div class="pre-footer text-white text-center p-3">
+                <div class="pre-footer text-white text-center p-5">
                     राज चंद्रा द्वारा कोरोनोवायरस के बारे में भारत में जागरूकता बढ़ाने के लिए प्यार <span class="text-danger">♥</span> से बनाया गया। <br>
-                    जल्द ही और अधिक सुविधाओं की उम्मीद करते हुए कार्य प्रगति पर है।
+                    जल्द ही और अधिक सुविधाओं की उम्मीद करते हुए कार्य प्रगति पर है। <br><br>
+                    इस परियोजना को और अधिक जानकारीपूर्ण और बेहतर बनाने में मेरी मदद करें। <br> 
+                    Help me make this project more informative and better. <br><br>
+                    <a href="http://github.com/rajchandra3/fight-corona">
+                        <button class="btn btn-light font-weight-bolder">GitHub</button>
+                    </a>
                 </div>
                 <!-- footer for apps -->
                 <div class="p-4 m-1 text-white text-center">

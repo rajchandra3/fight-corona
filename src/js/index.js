@@ -7,6 +7,7 @@ window.onload=()=>{
     Gb.getStatus();
     Country.getStatus();
     Country.getTimeline();
+    Gb.getTopN();
 }
 
 

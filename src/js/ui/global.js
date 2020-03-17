@@ -16,4 +16,21 @@ const getStatus = ()=>{
     })
 }
 
-export default {getStatus}
+const getTopN = ()=>{
+    let promise = Request.getGlobalTopN();
+    promise.then((data)=>{
+        $("table tbody tr").remove(); 
+        for(let i=0;i<data.length;i++){
+            $('table').find('tbody').append(`
+                <tr>
+                    <th scope="row">${data[i].country}</th>
+                    <td>${data[i].cases}</td>
+                    <td>${data[i].todayCases}</td>
+                    <td>${data[i].deaths}</td>
+                </tr>`);
+            if(i===10) break;
+        }
+    })
+}
+
+export default {getStatus,getTopN}

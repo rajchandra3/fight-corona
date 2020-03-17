@@ -6,6 +6,7 @@ const env=toggler?'production':'development';
 const urls={
     health_api:`https://health-api.com/api/v1/covid-19`,
     free_api:`https://thevirustracker.com/free-api`,
+    ninja_api:`https://corona.lmao.ninja`,
     app_url:`${env==="production"?'https://www.rajchandra.me':'http://localhost:8060'}`
 }
 

@@ -13,6 +13,17 @@ const getGlobalStatus = async()=>{
     }
 }
 
+const getGlobalTopN = async()=>{
+    let response = await fetch(`${Config.urls.ninja_api}/countries`);
+    if (response.ok) { // if HTTP-status is 200-299
+        // get the response body (the method explained below)
+        let json = await response.json();
+        return json;
+    } else {
+        alert("HTTP-Error: " + response.status);
+    }
+}
+
 //Country Statistics API
 const getCountryStatus = async(cc)=>{
     let response = await fetch(`${Config.urls.free_api}?countryTotal=${cc}`);
@@ -49,4 +60,5 @@ const getCountryTimeline = async(cc)=>{
     }
 }
 
-export default { getGlobalStatus, getGlobalTimeline, getCountryStatus, getCountryTimeline };
+
+export default { getGlobalStatus, getGlobalTimeline, getGlobalTopN, getCountryStatus, getCountryTimeline };
