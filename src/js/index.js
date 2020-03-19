@@ -3,6 +3,10 @@ import Country from './ui/country.js';
 // import GbStatus from './ui/global_status.js';
 // import GbStatus from './ui/global_status.js';
 
+import Store from './common/local_storage.js';
+import Translate from './ui/translation/translate.js';
+!Store.getItem('default_language')?Store.setItem('default_language',document.getElementById('choose-language').value):Translate.translate_ui();
+
 window.onload=()=>{
     Gb.getStatus();
     Country.getStatus();

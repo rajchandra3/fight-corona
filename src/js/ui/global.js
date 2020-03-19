@@ -1,4 +1,4 @@
-import LineConfig from './chats/line.js';
+import LineConfig from './charts/line.js';
 import Request from '../requests/main.js';
 
 const getStatus = ()=>{

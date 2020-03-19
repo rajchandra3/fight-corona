@@ -1,5 +1,7 @@
-import LineChart from './chats/line.js';
+import LineChart from './charts/line.js';
 import Request from '../requests/main.js';
+import variables from '../ui/translation/variables.js';
+import Translate from '../ui/translation/translate.js';
 
 const getStatus = ()=>{
     let cc='IN';
@@ -18,6 +20,7 @@ const getStatus = ()=>{
 }
 
 const getTimeline = ()=>{
+    let language = Translate.get_language();
     let cc='IN';
     let promise = Request.getCountryTimeline(cc);
     promise.then((data)=>{
@@ -34,8 +37,8 @@ const getTimeline = ()=>{
         }
         let chart_attributes = {
             element:'country-timeline',
-            title:'यह भारत में कोरोनावायरस के प्रसार की घटनाक्रम है।',
-            source:'',
+            title:variables.CHART.TITLE[language],
+            source:variables.CHART.SOURCE[language],
             yAxis:{
                 title:{text:""}
             },
@@ -44,7 +47,7 @@ const getTimeline = ()=>{
             },
             formatted_data,
             series:{
-                name:'संक्रमित मामले',
+                name:variables.CHART.SERIES_NAME[language],
                 symbol:'circle',
                 data:formatted_data
             },
@@ -53,7 +56,7 @@ const getTimeline = ()=>{
                 lineColor: '#666',
                 lineWidth: 1
             },
-            description:'यह चार्ट बताता है कि भारत में संक्रमित लोगों की संख्या कितनी बढ़ी है'
+            description:variables.CHART.DESCRIPTION[language],
         }
         document.querySelector('.country-timeline-description').innerHTML=chart_attributes.description;
         LineChart.plotChart(chart_attributes,x_axis,formatted_data);
