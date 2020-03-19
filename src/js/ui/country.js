@@ -21,7 +21,7 @@ const getStatus = ()=>{
 
 const getTimeline = ()=>{
     let language = Translate.get_language();
-    let cc='IN';
+    let cc='in';
     let promise = Request.getCountryTimeline(cc);
     promise.then((data)=>{
         data = data[0];
