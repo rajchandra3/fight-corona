@@ -15,6 +15,32 @@ window.onload=()=>{
 }
 
 
+//share button event listener
+const shareButton=document.querySelector('#share-button');
+const metas=document.querySelectorAll('meta');
+let description_text="";
+for(let meta of metas){
+    if(meta.getAttribute('name')=='description')
+        description_text=meta.getAttribute('content');
+}
+const share_data={
+    title: document.title,
+    text: description_text,
+    url: document.URL
+};
+if (navigator.share) {
+    shareButton.addEventListener('click', event => {
+        navigator.share(share_data)
+        .then(() => {
+            console.log('Thanks for sharing!');
+        })
+        .catch(console.error);
+    });
+} else {
+    document.querySelector('.share-btn-container').style.display='none';
+}
+
+//service worker for PWA
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', ()=> {
         navigator.serviceWorker.register('/service_worker.js').then((registration)=> {
