@@ -105,7 +105,7 @@ const variables = {
     },
     "COUNTRY_STATUS_HEADLINE":{
         HINDI:"देश भर में महामारी की स्थिति",
-        ENGLISH:"Country wide pandemic updates",
+        ENGLISH:"Country Wide Pandemic Updates",
         BENGALI:"",
         TAMIL:"",
         TELGUE:"",
@@ -259,7 +259,7 @@ const variables = {
     },
     "TAKE_CARE_STAY_SAFE":{
         HINDI:"ध्यान रखें, सुरक्षित रहें",
-        ENGLISH:"Take case, Stay safe",
+        ENGLISH:"Take care, Stay safe",
         BENGALI:"",
         TAMIL:"",
         TELGUE:"",
