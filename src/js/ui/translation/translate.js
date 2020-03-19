@@ -46,6 +46,7 @@ const translate_ui = ()=>   {
     document.querySelector('.translate-total-deaths').innerHTML=v.TOTAL_DEATHS[language];
     document.querySelector('.translate-take-care-stay-safe').innerHTML=v.TAKE_CARE_STAY_SAFE[language];
     document.querySelector('.translate-github-cta-text').innerHTML=v.GITHUB_CTA_TEXT[language];
+    document.querySelector('.translate-share-cta-text').innerHTML=v.SHARE_CTA_TEXT[language];
     document.querySelector('.translate-does-donts-poster').setAttribute('src',`./src/documents/prevention_measures/${language.toLowerCase()}_dos_donts.png`)
     // document.querySelector('.translate-').innerHTML=;
     country_ui.getTimeline();

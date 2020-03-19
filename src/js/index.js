@@ -8,8 +8,8 @@ import Translate from './ui/translation/translate.js';
 !Store.getItem('default_language')?Store.setItem('default_language',document.getElementById('choose-language').value):Translate.translate_ui();
 
 window.onload=()=>{
-    Gb.getStatus();
     Country.getStatus();
+    Gb.getStatus();
     Country.getTimeline();
     Gb.getTopN();
 }

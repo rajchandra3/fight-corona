@@ -2,7 +2,21 @@ const CACHE_NAME = "fight-corona-rajchandra-me";
 
 const urlsToCache = [
   "/index.html",
-  "/js/ui/charts/line.js"
+  "/css/index.css",
+  "/css/mobile.css",
+  "/documents/prevention_measures/english_dos_donts.png",
+  "/documents/prevention_measures/hindi_dos_donts.png",
+  "/images/icons/",
+  "/js/common/local_storage.js",
+  "/js/requests/config.js",
+  "/js/requests/cookie.js",
+  "/js/requests/main.js",
+  "/js/ui/charts/line.js",
+  "/js/ui/translation/traslate.js",
+  "/js/ui/translation/variables.js",
+  "/js/ui/country.js",
+  "/js/ui/global.js",
+  "/js/index.js"
 ]
 
 self.addEventListener('install', function(event) {

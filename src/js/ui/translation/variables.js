@@ -137,7 +137,7 @@ const variables = {
     },
     "COUNTRY_STATUS_TOTAL_SERIOUS":{
         HINDI:"कुल गंभीर मामले",
-        ENGLISH:"total serous cases",
+        ENGLISH:"total serious cases",
         BENGALI:"",
         TAMIL:"",
         TELGUE:"",
@@ -268,6 +268,14 @@ const variables = {
     "GITHUB_CTA_TEXT":{
         HINDI:"GitHub",
         ENGLISH:"GitHub",
+        BENGALI:"",
+        TAMIL:"",
+        TELGUE:"",
+        MARATHI:""
+    },
+    "SHARE_CTA_TEXT":{
+        HINDI:"दोस्तों और परिवार के साथ साझा करें",
+        ENGLISH:"Share with friends & family",
         BENGALI:"",
         TAMIL:"",
         TELGUE:"",

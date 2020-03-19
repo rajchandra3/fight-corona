@@ -1,6 +1,6 @@
 {
-    "name": "कोरोनावायरस जागरूकता अभियान",
-    "short_name": "कोरोनावायरस जागरूकता अभियान",
+    "name": "Virus Tracker",
+    "short_name": "Virus Tracker",
     "start_url": "/",
     "display": "standalone",
     "background_color": "#ffffff",
