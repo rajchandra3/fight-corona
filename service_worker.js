@@ -2,21 +2,21 @@ const CACHE_NAME = "fight-corona-rajchandra-me";
 
 const urlsToCache = [
   "/index.html",
-  "/css/index.css",
-  "/css/mobile.css",
-  "/documents/prevention_measures/english_dos_donts.png",
-  "/documents/prevention_measures/hindi_dos_donts.png",
-  "/images/icons/",
-  "/js/common/local_storage.js",
-  "/js/requests/config.js",
-  "/js/requests/cookie.js",
-  "/js/requests/main.js",
-  "/js/ui/charts/line.js",
-  "/js/ui/translation/traslate.js",
-  "/js/ui/translation/variables.js",
-  "/js/ui/country.js",
-  "/js/ui/global.js",
-  "/js/index.js"
+  "/src/css/index.css",
+  "/src/css/mobile.css",
+  "/src/documents/prevention_measures/english_dos_donts.png",
+  "/src/documents/prevention_measures/hindi_dos_donts.png",
+  "/src/images/icons/",
+  "/src/js/common/local_storage.js",
+  "/src/js/requests/config.js",
+  "/src/js/requests/cookie.js",
+  "/src/js/requests/main.js",
+  "/src/js/ui/charts/line.js",
+  "/src/js/ui/translation/traslate.js",
+  "/src/js/ui/translation/variables.js",
+  "/src/js/ui/country.js",
+  "/src/js/ui/global.js",
+  "/src/js/index.js"
 ]
 
 self.addEventListener('install', function(event) {
@@ -55,4 +55,4 @@ self.addEventListener('fetch', function(event) {
           }
         })
     );
-  }); 
+}); 
