@@ -16,6 +16,9 @@ a:hover{
 .no-padding{
     padding: 0px !important;
 }
+.text-tiny{
+    font-size: x-small;
+}
 .main-header{
     padding: 2rem;
     text-align: center;

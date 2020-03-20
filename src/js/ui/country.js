@@ -66,16 +66,26 @@ const getTimeline = ()=>{
 const getIndianStats = ()=>{
     let promise = Request.getIndianRegionalData();
     promise.then((data)=>{
-        data=data[data.length-1].regional;
+        let new_data=data[data.length-1];
+        let old_data=data[data.length-2];
+        new_data=new_data.regional;
+        old_data=old_data.regional;
         $(".indian-stats-tbody tr").remove(); 
-        for(let i=0;i<data.length;i++){
-            $('table').find('.indian-stats-tbody').append(`
-                <tr>
-                    <th scope="row">${data[i].loc}</th>
-                    <td>${data[i].confirmedCasesIndian}</td>
-                    <td>${data[i].confirmedCasesForeign}</td>
-                    <td>${data[i].deaths}</td>
-                </tr>`);
+        for(let d1 of new_data){
+            for(let d2 of old_data){
+                if(d1.loc === d2.loc){
+                    let difference_indian = d1.confirmedCasesIndian-d2.confirmedCasesIndian;
+                    let difference_foreigners = d1.confirmedCasesForeign-d2.confirmedCasesForeign;
+                    let difference_deaths = d1.deaths-d2.deaths;
+                    $('table').find('.indian-stats-tbody').append(`
+                        <tr>
+                            <th scope="row">${d1.loc}</th>
+                            <td>${d1.confirmedCasesIndian}<span class="text-tiny font-weight-bold ${difference_indian<=0?"text-success":"text-danger"}">(${difference_indian>0?"+"+difference_indian:difference_indian})</span></td>
+                            <td>${d1.confirmedCasesForeign}<span class="text-tiny font-weight-bold ${difference_foreigners<=0?"text-success":"text-danger"}">(${difference_foreigners>0?"+"+difference_foreigners:difference_foreigners})</span></td>
+                            <td>${d1.deaths}<span class="text-tiny font-weight-bold ${difference_deaths<=0?"text-success":"text-danger"}">(${difference_deaths>0?"+"+difference_deaths:difference_deaths})</span></td>
+                        </tr>`);
+                }
+            }
         }
     })
 }
