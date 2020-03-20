@@ -11,6 +11,7 @@ const translate_ui = ()=>   {
     //get language value 
     let language = get_language();
     //set text in document
+    document.querySelector('html').setAttribute("lang",v.AVAILABLE_LANGUAGES[language.toLowerCase()].iso_name);
     document.title=v.TITLE[language];
     document.getElementsByTagName('meta')["twitter:title"].content=v.TITLE[language];
     document.querySelector('meta[property="og:title"][content]').content=v.TITLE[language];
@@ -20,6 +21,7 @@ const translate_ui = ()=>   {
     document.querySelector('meta[property="og:title"][content]').content=v.TITLE[language];
     document.querySelector('.translate-title').textContent=v.TITLE[language];
     document.querySelector('.translate-sub-title').innerHTML=v.SUB_TITLE[language];
+    document.querySelector('.translate-language-label').innerHTML=v.LANGUAGE[language];
     document.querySelector('.translate-global-status-headline').innerHTML=v.GLOBAL_STATUS_HEADLINE[language];
     document.querySelector('.translate-gbl-status-total-new-cases').innerHTML=v.GLOBAL_STATUS_TOTAL_NEW_CASES[language];
     document.querySelector('.translate-gbl-status-total-new-deaths').innerHTML=v.GLOBAL_STATUS_TOTAL_NEW_DEATHS[language];
@@ -67,6 +69,25 @@ const upadate_language = ()=>{
     Store.setItem('default_language',selected_language);
     translate_ui();
 }
+
+const set_langauge_options = ()=>{
+    let current_language=get_language();
+    const select_language_element = document.getElementById('choose-language');
+    const entries = Object.entries(v.AVAILABLE_LANGUAGES);
+    for(let [name, lang]  of entries){
+        let option = document.createElement('option');
+        option.appendChild( document.createTextNode(lang.label) );
+        option.value = lang.name;
+        if(option.value===current_language){
+            // options.selectedIndex=option.index;
+            option.defaultSelected=true;
+            option.selected=true;
+        }
+        select_language_element.appendChild(option); 
+        document.querySelector('.translate-language-label').innerHTML=v.LANGUAGE[current_language];
+    }
+}
+
 //add event listener to select
 document.querySelector('#choose-language').addEventListener('input',upadate_language);
-export default {get_language,translate_ui}
+export default {get_language,translate_ui,set_langauge_options}
