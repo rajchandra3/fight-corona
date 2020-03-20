@@ -22,6 +22,10 @@ const translate_ui = ()=>   {
     document.querySelector('.translate-title').textContent=v.TITLE[language];
     document.querySelector('.translate-sub-title').innerHTML=v.SUB_TITLE[language];
     document.querySelector('.translate-language-label').innerHTML=v.LANGUAGE[language];
+    document.querySelector('.translate-state').innerHTML=v.INDIAN_STATS_TABLE.STATE[language];
+    document.querySelector('.translate-indians').innerHTML=v.INDIAN_STATS_TABLE.INDIANS[language];
+    document.querySelector('.translate-foreigners').innerHTML=v.INDIAN_STATS_TABLE.FOREIGNERS[language];
+    document.querySelector('.translate-deaths').innerHTML=v.INDIAN_STATS_TABLE.DEATHS[language];
     document.querySelector('.translate-global-status-headline').innerHTML=v.GLOBAL_STATUS_HEADLINE[language];
     document.querySelector('.translate-gbl-status-total-new-cases').innerHTML=v.GLOBAL_STATUS_TOTAL_NEW_CASES[language];
     document.querySelector('.translate-gbl-status-total-new-deaths').innerHTML=v.GLOBAL_STATUS_TOTAL_NEW_DEATHS[language];

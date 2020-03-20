@@ -12,7 +12,7 @@ const urlsToCache = [
   "/src/js/requests/cookie.js",
   "/src/js/requests/main.js",
   "/src/js/ui/charts/line.js",
-  "/src/js/ui/translation/traslate.js",
+  "/src/js/ui/translation/translate.js",
   "/src/js/ui/translation/variables.js",
   "/src/js/ui/country.js",
   "/src/js/ui/global.js",

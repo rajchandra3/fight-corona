@@ -60,5 +60,16 @@ const getCountryTimeline = async(cc)=>{
     }
 }
 
+//Country Timeline API
+const getIndianRegionalData = async()=>{
+    let response = await fetch(`${Config.urls.root_api}/stats/daily`);
+    if (response.ok) { // if HTTP-status is 200-299
+        // get the response body (the method explained below)
+        let json = await response.json();
+        return json.data;
+    } else {
+        alert("HTTP-Error: " + response.status);
+    }
+}
 
-export default { getGlobalStatus, getGlobalTimeline, getGlobalTopN, getCountryStatus, getCountryTimeline };
+export default { getGlobalStatus, getGlobalTimeline, getGlobalTopN, getCountryStatus, getCountryTimeline, getIndianRegionalData };

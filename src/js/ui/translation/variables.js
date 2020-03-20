@@ -53,6 +53,40 @@ const variables = {
         TELGUE:"భాష",
         MARATHI:"भाषा"
     },
+    INDIAN_STATS_TABLE:{
+        STATE:{
+            HINDI:"राज्य",
+            ENGLISH:"State",
+            BENGALI:"রাষ্ট্র",
+            TAMIL:"நிலை",
+            TELGUE:"",
+            MARATHI:""
+        },
+        INDIANS:{
+            HINDI:"भारतीय",
+            ENGLISH:"Indian",
+            BENGALI:"ভারতীয়",
+            TAMIL:"இந்தியன்",
+            TELGUE:"",
+            MARATHI:""
+        },
+        FOREIGNERS:{
+            HINDI:"विदेशी",
+            ENGLISH:"Foreigners",
+            BENGALI:"বিদেশীদের",
+            TAMIL:"வெளிநாட்டினர்",
+            TELGUE:"",
+            MARATHI:""
+        },
+        DEATHS:{
+            HINDI:"मृत्यु",
+            ENGLISH:"deaths",
+            BENGALI:"মৃত্যু",
+            TAMIL:"இறப்புகள்",
+            TELGUE:"",
+            MARATHI:""
+        }
+    },
     "GLOBAL_STATUS_HEADLINE":{
         HINDI:"विश्व भर में महामारी की स्थिति",
         ENGLISH:"Worldwide Epidemic Updates",

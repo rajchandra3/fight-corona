@@ -19,9 +19,9 @@ const getStatus = ()=>{
 const getTopN = ()=>{
     let promise = Request.getGlobalTopN();
     promise.then((data)=>{
-        $("table tbody tr").remove(); 
+        $(".global-infeceted-countries-tbody tr").remove(); 
         for(let i=0;i<data.length;i++){
-            $('table').find('tbody').append(`
+            $('table').find('.global-infeceted-countries-tbody').append(`
                 <tr>
                     <th scope="row">${data[i].country}</th>
                     <td>${data[i].cases}</td>

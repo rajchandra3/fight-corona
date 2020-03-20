@@ -10,6 +10,7 @@ Translate.set_langauge_options();
 !Store.getItem('default_language')?Store.setItem('default_language',document.getElementById('choose-language').value):Translate.translate_ui();
 
 window.onload=()=>{
+    Country.getIndianStats();
     Country.getStatus();
     Gb.getStatus();
     Country.getTimeline();

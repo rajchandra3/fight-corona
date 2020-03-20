@@ -63,4 +63,21 @@ const getTimeline = ()=>{
     })
 }
 
-export default {getStatus, getTimeline}
+const getIndianStats = ()=>{
+    let promise = Request.getIndianRegionalData();
+    promise.then((data)=>{
+        data=data[data.length-1].regional;
+        $(".indian-stats-tbody tr").remove(); 
+        for(let i=0;i<data.length;i++){
+            $('table').find('.indian-stats-tbody').append(`
+                <tr>
+                    <th scope="row">${data[i].loc}</th>
+                    <td>${data[i].confirmedCasesIndian}</td>
+                    <td>${data[i].confirmedCasesForeign}</td>
+                    <td>${data[i].deaths}</td>
+                </tr>`);
+        }
+    })
+}
+
+export default {getStatus, getTimeline, getIndianStats}
