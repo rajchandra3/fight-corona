@@ -268,22 +268,23 @@
             <div class="col-lg-12 text-center no-padding">
                 <div class="jumbotron jumbotron-fluid no-margin">
                     <div class="container">
-                    <h1 class="display-4 translate-take-care-stay-safe">ध्यान रखें, सुरक्षित रहें</h1>
-                    <!-- <div class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</div> -->
+                        <h1 class="display-4 translate-take-care-stay-safe">ध्यान रखें, सुरक्षित रहें</h1>
+                        <!-- <div class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</div> -->
                     </div>
 
                     <!-- share button -->
                     <div class="p-3 share-btn-container">
-                        
-                        <!-- share target indicator-->
-                        <div class="col-sm-12 pt-4 progress-container">
-                            <div class="progress">
-                                <div class="progress-bar" id="temp-pbar" role="progressbar" data-width="78%" aria-valuemin="78" aria-valuemax="100"></div>
-                            </div>
                         </div>
                         <button class="btn btn-success text-white" id="share-button"><span class="translate-share-cta-text">Share with Friends</span>&nbsp;
                             <img src="src/images/share-icon.svg" class="white-icons m-1" height="25px" width="25px" aria-hidden="true">
                         </button>
+                        
+                        <!-- share target indicator-->
+                        <div class="col-sm-12 p-5 progress-container">
+                            <div class="progress">
+                                <div class="progress-bar bg-primary" id="complete-pbar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar bg-light" id="incomplete-pbar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
                     </div>
                 </div>
             </div>

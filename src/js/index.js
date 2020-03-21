@@ -4,11 +4,13 @@ import Store from './common/local_storage.js';
 import Translate from './ui/translation/translate.js';
 import Config from './requests/config.js';
 import v from './ui/translation/variables.js';
+import Share from '../js/requests/share.js';
 
 Translate.set_langauge_options(); //sets values in choose language 
 !Store.getItem('default_language')?Store.setItem('default_language',document.getElementById('choose-language').value):Translate.translate_ui();
 
 window.onload=()=>{
+    Share.update_shared_stats();
     Country.getIndianStats();
     Country.getStatus();
     Gb.getStatus();
@@ -16,7 +18,7 @@ window.onload=()=>{
     Gb.getTopN();
 }
 //share button event listener
-if (navigator.share) {
+if (!navigator.share) {
     const shareButton=document.querySelector('#share-button');
     shareButton.addEventListener('click', event => {
         const metas=document.querySelectorAll('meta');
