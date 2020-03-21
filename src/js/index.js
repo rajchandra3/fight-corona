@@ -5,15 +5,15 @@ import Translate from './ui/translation/translate.js';
 import Config from './requests/config.js';
 import v from './ui/translation/variables.js';
 
+Translate.set_langauge_options(); //sets values in choose language 
+!Store.getItem('default_language')?Store.setItem('default_language',document.getElementById('choose-language').value):Translate.translate_ui();
+
 window.onload=()=>{
     Country.getIndianStats();
     Country.getStatus();
     Gb.getStatus();
     Country.getTimeline();
     Gb.getTopN();
-    Translate.set_langauge_options(); //sets values in choose language 
-    !Store.getItem('default_language')?Store.setItem('default_language',document.getElementById('choose-language').value):Translate.translate_ui();
-    
 }
 
 //share button event listener
