@@ -394,6 +394,78 @@ const variables = {
         TELGUE:`నేటి భారతీయ గణాంకాలు -> మరణం: <total_deaths_in_india>, కేసులు: <total_cases_in_india>. కరోనావైరస్ గురించి కొత్త నవీకరణలను పొందండి, ప్రత్యక్ష గణాంకాలను చూడండి మరియు ఈ ఘోరమైన డీసీజ్ గురించి తెలియజేయండి. ప్రపంచవ్యాప్తంగా <total_cases_in_world> మందికి పైగా ప్రజలు ప్రభావితమయ్యారు, జాగ్రత్తలు తీసుకోవడం ద్వారా మిమ్మల్ని మీరు రక్షించుకోండి.`,
         PUNJABI:`ਅੱਜ ਦੇ ਭਾਰਤੀ ਅੰਕੜੇ -> ਮੌਤ: <total_deaths_in_india>, ਕੇਸ: <total_cases_in_india>. ਕੋਰੋਨਾਵਾਇਰਸ 'ਤੇ ਨਵੇਂ ਅਪਡੇਟਾਂ ਪ੍ਰਾਪਤ ਕਰੋ, ਲਾਈਵ ਅੰਕੜੇ ਵੇਖੋ ਅਤੇ ਇਸ ਘਾਤਕ ਡੀਸੀਜ਼ ਬਾਰੇ ਜਾਣੂ ਕਰੋ. ਦੁਨੀਆ ਭਰ ਦੇ <total_cases_in_world> ਤੋਂ ਵੱਧ ਲੋਕ ਪ੍ਰਭਾਵਿਤ ਹਨ, ਸਾਵਧਾਨੀ ਵਰਤ ਕੇ ਆਪਣੇ ਆਪ ਨੂੰ ਬਚਾਓ.`,
         MARATHI:""
+    },
+    iss:{
+        HINDI:"भारतीय राज्यों का सारांश",
+        ENGLISH:"Indian States Summary",
+        BENGALI:"ভারতীয় রাজ্যের সংক্ষিপ্তসার",
+        TAMIL:"இந்திய மாநிலங்களின் சுருக்கம்",
+        TELGUE:"భారతీయ రాష్ట్రాల సారాంశం",
+        PUNJABI:"ਭਾਰਤੀ ਸਟੇਟ ਸੰਖੇਪ",
+        MARATHI:""
+    },
+    is:{
+        HINDI:"भारतीय सारांश",
+        ENGLISH:"Indian Summary",
+        BENGALI:"ভারতীয় সংক্ষিপ্তসার",
+        TAMIL:"இந்திய சுருக்கம்",
+        TELGUE:"భారతీయ సారాంశం",
+        PUNJABI:"ਭਾਰਤੀ ਸੰਖੇਪ",
+        MARATHI:""
+    },
+    gs:{
+        HINDI:"वैश्विक सारांश",
+        ENGLISH:"Global Summary",
+        BENGALI:"গ্লোবাল সারসংক্ষেপ",
+        TAMIL:"உலகளாவிய சுருக்கம்",
+        TELGUE:"గ్లోబల్ సారాంశం",
+        PUNJABI:"ਗਲੋਬਲ ਸੰਖੇਪ",
+        MARATHI:""
+    },
+    it:{
+        HINDI:"इंडियन टाइमलाइन",
+        ENGLISH:"Indian Timeline",
+        BENGALI:"ভারতীয় সময়রেখা",
+        TAMIL:"இந்திய காலவரிசை",
+        TELGUE:"భారతీయ కాలక్రమం",
+        PUNJABI:"ਭਾਰਤੀ ਟਾਈਮਲਾਈਨ",
+        MARATHI:""
+    },
+    gtac:{
+        HINDI:"वैश्विक शीर्ष प्रभावित देश",
+        ENGLISH:"Global Top Affected Countries",
+        BENGALI:"গ্লোবাল শীর্ষ প্রভাবিত দেশ",
+        TAMIL:"உலகளாவிய சிறந்த பாதிக்கப்பட்ட நாடுகள்",
+        TELGUE:"గ్లోబల్ టాప్ ప్రభావిత దేశాలు",
+        PUNJABI:"ਗਲੋਬਲ ਪ੍ਰਮੁੱਖ ਪ੍ਰਭਾਵਿਤ ਦੇਸ਼",
+        MARATHI:""
+    },
+    gg:{
+        HINDI:"सरकारी दिशानिर्देश",
+        ENGLISH:"Government Guidelines",
+        BENGALI:"সরকারী নির্দেশিকা",
+        TAMIL:"அரசாங்க வழிகாட்டுதல்கள்",
+        TELGUE:"ప్రభుత్వ మార్గదర్శకాలు",
+        PUNJABI:"ਸਰਕਾਰੀ ਦਿਸ਼ਾ-ਨਿਰਦੇਸ਼",
+        MARATHI:""
+    },
+    st:{
+        HINDI:"लक्ष्य साझा करें",
+        ENGLISH:"Share Target",
+        BENGALI:"শেয়ার লক্ষ্য",
+        TAMIL:"பகிர் இலக்கு",
+        TELGUE:"షేర్ టార్గెట్",
+        PUNJABI:"ਟਾਰਗੇਟ ਸਾਂਝਾ ਕਰੋ",
+        MARATHI:""
+    },
+    ss:{
+        HINDI:"कुछ कहें!",
+        ENGLISH:"Say Something!",
+        BENGALI:"কিছু বল!",
+        TAMIL:"ஏதாவது கூறுங்கள்!",
+        TELGUE:"ఏదైనా చెప్పు!",
+        PUNJABI:"ਕੁੱਝ ਕਹੋ!",
+        MARATHI:""
     }
 }
 

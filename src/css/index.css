@@ -20,10 +20,8 @@ a:hover{
     font-size: x-small;
 }
 .main-header{
-    padding: 2rem;
     text-align: center;
-    font-size: 2rem;
-    background: #00b389;
+    font-size: 1.2rem;
 }
 .gbl-status-container,.gbl-timeline-container,.country-status-container,.country-timeline-container{
     display: flex;
@@ -33,7 +31,7 @@ a:hover{
 .header{
     padding: 2rem;
     text-align: center;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 .content-container{
     margin: 2rem;
