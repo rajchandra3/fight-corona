@@ -65,12 +65,14 @@ const getTimeline = ()=>{
 
 const getIndianStats = ()=>{
     let promise = Request.getIndianRegionalData();
-    promise.then((data)=>{
+    promise.then((res)=>{
+        let data=res.data;
         let new_data=data[data.length-1];
         let old_data=data[data.length-2];
         new_data=new_data.regional;
         old_data=old_data.regional;
-        $(".indian-stats-tbody tr").remove(); 
+        $(".indian-stats-tbody tr").remove();
+        document.querySelector('.translate-indian-stats-caption').innerHTML=`last updated ${moment(new Date(res.lastOriginUpdate), "YYYYMMDD").fromNow()}`;
         for(let d1 of new_data){
             for(let d2 of old_data){
                 if(d1.loc === d2.loc){

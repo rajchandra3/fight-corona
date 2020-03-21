@@ -1,8 +1,5 @@
 import Gb from './ui/global.js';
 import Country from './ui/country.js';
-// import GbStatus from './ui/global_status.js';
-// import GbStatus from './ui/global_status.js';
-
 import Store from './common/local_storage.js';
 import Translate from './ui/translation/translate.js';
 
