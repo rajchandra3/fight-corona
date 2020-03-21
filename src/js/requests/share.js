@@ -21,7 +21,7 @@ const getQueryParams = (url) => {
 
 const make_ui =(count,target)=>{
     let complete_indicator = count/target*100;
-    complete_indicator=complete_indicator<30?complete_indicator+20:complete_indicator;
+    complete_indicator=complete_indicator<30?complete_indicator+30:complete_indicator;
     document.getElementById('complete-pbar').style.width = `${complete_indicator}%`;
     document.getElementById('complete-pbar').setAttribute('aria-valuenow',`${complete_indicator}`);
     document.getElementById('complete-pbar').innerHTML=`<b>shares (${count})</b>`;
@@ -40,7 +40,7 @@ const update_shared_stats = async ()=>{
         //show in UI
         make_ui(params.count, params.target)
     }else{
-        let medium = 'in-app';
+        let medium = 'direct';
         if(params.utm_medium){
             medium=params.utm_medium
         }else if(params.fbclid){
