@@ -61,7 +61,6 @@
     <!-- import css -->
     <link rel="stylesheet" href="./src/css/index.css">
     <link rel='stylesheet' media='screen and (min-width: 0px) and (max-width: 576px)' href='./src/css/mobile.css' />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/three-dots@0.2.0/dist/three-dots.min.css">
     <!-- <link rel='stylesheet' media='screen and (min-width: 577px)' href='/stylesheets/css/large.css' /> -->
 
     <!-- import bootstrap -->
@@ -88,7 +87,7 @@
     </script>
 
     <!-- Google ads -->
-    <script data-ad-client="ca-pub-8598751574376549" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- <script data-ad-client="ca-pub-8598751574376549" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
     
 </head>
 <body>
@@ -113,7 +112,9 @@
             <!-- Indian statistics -->
             <div class="col-lg-12 no-padding no-margin">
                 <table class="table table-striped no-margin">
-                    <caption class="translate-indian-stats-caption text-center text-tiny"></caption>
+                    <caption class="translate-indian-stats-caption text-center text-tiny">
+                        loading ...
+                    </caption>
                     <thead class="bg-dark text-white">
                         <tr>
                             <th scope="col" class="translate-state">State</th>
@@ -123,9 +124,6 @@
                         </tr>
                     </thead>
                     <tbody class="indian-stats-tbody">
-                        <tr class="indian-stats-loader-container text-center">
-                            <td class="dot-typing"></td>
-                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -233,7 +231,6 @@
             <!-- global top infected contries -->
             <div class="col-lg-12 no-padding no-margin">
                 <table class="table table-striped no-margin">
-                    <div class="dot-typing top-affected-countires-loader"></div>
                     <thead class="bg-dark text-white">
                         <tr>
                             <th scope="col" class="translate-country">देश</th>
@@ -248,7 +245,7 @@
             </div>
             
             <!-- do's and dont's based on language -->
-            <div class="col-xs-12 col-sm-12 pdf-container centered no-padding no-margin">
+            <div class="col-xs-12 col-lg-6 pdf-container centered no-padding no-margin">
                 <img 
                     class="translate-does-donts-poster"
                     src="" 
@@ -257,7 +254,7 @@
             </div>
 
             <!-- cta to mohfw.gov.in -->
-            <div class="col-lg-12 gov-link-container text-center bg-emerald">
+            <div class="col-lg-6 gov-link-container text-center bg-emerald">
                 <p class="header translate-gov-link-container-text">भारत सरकार द्वारा जारी की गई पूरी जानकारी पढ़ने के लिए यहां क्लिक करें। </p>
                 <p class="header"><span class="text-large">&#128071;&#127997;</span></p>
                 <a href="https://www.mohfw.gov.in" class="no-decore">
@@ -268,41 +265,42 @@
             </div>
 
             <!-- Appeal -->
-            <div class="col-lg-12 no-padding">
+            <div class="col-lg-12 text-center no-padding">
                 <div class="jumbotron jumbotron-fluid no-margin">
                     <div class="container">
                     <h1 class="display-4 translate-take-care-stay-safe">ध्यान रखें, सुरक्षित रहें</h1>
                     <!-- <div class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</div> -->
                     </div>
-                </div>
-                <!-- share button -->
-                <div class="col-lg-12 p-3 centered share-btn-container">
-                    
-                    <!-- share target indicator-->
-                    <div class="col-sm-12 pt-4 progress-container">
-                        <div class="progress">
-                            <div class="progress-bar" id="temp-pbar" role="progressbar" data-width="78%" aria-valuemin="78" aria-valuemax="100"></div>
+
+                    <!-- share button -->
+                    <div class="p-3 share-btn-container">
+                        
+                        <!-- share target indicator-->
+                        <div class="col-sm-12 pt-4 progress-container">
+                            <div class="progress">
+                                <div class="progress-bar" id="temp-pbar" role="progressbar" data-width="78%" aria-valuemin="78" aria-valuemax="100"></div>
+                            </div>
                         </div>
+                        <button class="btn btn-success text-white" id="share-button"><span class="translate-share-cta-text">Share with Friends</span>&nbsp;
+                            <img src="src/images/share-icon.svg" class="white-icons m-1" height="25px" width="25px" aria-hidden="true">
+                        </button>
                     </div>
-                    <button class="btn btn-success text-white" id="share-button"><span class="translate-share-cta-text">Share with Friends</span>&nbsp;
-                        <img src="src/images/share-icon.svg" class="white-icons m-1" height="25px" width="25px" aria-hidden="true">
-                    </button>
                 </div>
             </div>
 
             <!-- facebook comment plugin -->
-            <div class="col-lg-6 col-sm-12 centered">
+            <div class="col-lg-12 col-sm-12 centered fb-comments-container">
                 <div class="fb-comments" data-href="https://fight-corona.rajchandra.me" data-width="" data-numposts="10"></div>
             </div>
             <!-- footer -->
             <div class="col-lg-12 bg-dark">
-                <div class="pre-footer text-white text-center p-5">
-                    <!-- इस परियोजना को और अधिक जानकारीपूर्ण और बेहतर बनाने में मेरी मदद करें। <br> 
-                    Help me make this project more informative and better. <br><br> -->
+                <!-- <div class="pre-footer text-white text-center p-5">
+                    इस परियोजना को और अधिक जानकारीपूर्ण और बेहतर बनाने में मेरी मदद करें। <br> 
+                    Help me make this project more informative and better. <br><br>
                     <a href="http://github.com/rajchandra3/fight-corona">
                         <button class="btn btn-light font-weight-bolder translate-github-cta-text">GitHub</button>
                     </a>
-                </div>
+                </div> -->
                 <!-- footer for apps -->
                 <div class="p-4 m-1 text-white text-center">
                     &copy; 

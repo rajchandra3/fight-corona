@@ -79,6 +79,9 @@ a:hover{
 .gov-link-container{
     padding: 10rem 0 10rem 0;
 }
+.fb-comments-container{
+    padding: 0 100px 0 100px !important;
+}
 .pre-footer{
     font-size: 20px;
 }

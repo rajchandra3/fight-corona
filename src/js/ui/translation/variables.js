@@ -20,21 +20,33 @@ const variables = {
             label:'தமிழ்',
             iso_name:'ta'
         },
+        telgue:{
+            name:'TELGUE',
+            label:'తెలుగు',
+            iso_name:'te'
+        },
+        punjabi:{
+            name:'PUNJABI',
+            label:'ਪੰਜਾਬੀ',
+            iso_name:'pa'
+        }
     },
     "TITLE":{
         HINDI:"कोरोनावायरस जागरूकता अभियान",
         ENGLISH:"Coronavirus Awareness Campaign",
         BENGALI:"করোনাভাইরাস সচেতনতা প্রচারণা",
         TAMIL:"கொரோனா வைரஸ் விழிப்புணர்வு பிரச்சாரம்",
-        TELGUE:"",
+        TELGUE:"కరోనావైరస్ అవగాహన ప్రచారం",
+        PUNJABI:"ਕੋਰੋਨਾਵਾਇਰਸ ਜਾਗਰੂਕਤਾ ਅਭਿਆਨ",
         MARATHI:""
     },
     "DESCRIPTION":{
         HINDI:"कोरोनोवायरस एक घातक बीमारी है और डब्ल्यूएचओ द्वारा एक महामारी घोषित की जाती है। हमारा कर्तव्य है कि कोरोनावायरस के बारे में जागरूकता की देखभाल करें ताकि महामारी को जल्द से जल्द रोका जा सके। यह वेबसाइट अपनी क्षेत्रीय भाषाओं में महामारी के बारे में लाइव अपडेट प्रदान करेगी।",
-        ENGLISH:"Coronovirus is a deadly disease and is declared an epidemic by WHO. It is our duty to create awareness about coronaviruses so that the epidemic is prevented as soon as possible. This website will provide live updates about the epidemic in its regional languages.",
+        ENGLISH:"Coronavirus is a deadly disease and is declared an epidemic by WHO. It is our duty to create awareness about coronaviruses so that the epidemic is prevented as soon as possible. This website will provide live updates about the epidemic in its regional languages.",
         BENGALI:"করোনোভাইরাস একটি মারাত্মক রোগ এবং ডাব্লুএইচও দ্বারা একটি মহামারী হিসাবে ঘোষণা করা হয়েছে। করোনাভাইরাস সম্পর্কে সচেতনতা তৈরি করা আমাদের কর্তব্য যাতে মহামারীটি যত তাড়াতাড়ি সম্ভব প্রতিরোধ করা হয়। এই ওয়েবসাইটটি এর আঞ্চলিক ভাষায় মহামারী সম্পর্কে লাইভ আপডেট সরবরাহ করবে।",
         TAMIL:"கொரோனோவைரஸ் ஒரு கொடிய நோய் மற்றும் WHO ஆல் ஒரு தொற்றுநோயாக அறிவிக்கப்படுகிறது. கொரோனா வைரஸ்கள் குறித்த விழிப்புணர்வை ஏற்படுத்துவது நமது கடமையாகும், இதனால் தொற்றுநோய் விரைவில் தடுக்கப்படுகிறது. இந்த வலைத்தளம் அதன் பிராந்திய மொழிகளில் தொற்றுநோய் பற்றிய நேரடி புதுப்பிப்புகளை வழங்கும்.",
-        TELGUE:"",
+        TELGUE:"కరోనోవైరస్ ఒక ప్రాణాంతక వ్యాధి మరియు దీనిని WHO ఒక అంటువ్యాధిగా ప్రకటించింది. కరోనావైరస్ల గురించి అవగాహన కల్పించడం మన కర్తవ్యం, తద్వారా అంటువ్యాధి వీలైనంత త్వరగా నివారించబడుతుంది. ఈ వెబ్‌సైట్ దాని ప్రాంతీయ భాషలలో అంటువ్యాధి గురించి ప్రత్యక్ష నవీకరణలను అందిస్తుంది.",
+        PUNJABI:"ਕੋਰੋਨਾਵਾਇਰਸ ਇੱਕ ਘਾਤਕ ਬਿਮਾਰੀ ਹੈ ਅਤੇ WHO ਦੁਆਰਾ ਇੱਕ ਮਹਾਂਮਾਰੀ ਘੋਸ਼ਿਤ ਕੀਤੀ ਗਈ ਹੈ. ਕੋਰੋਨਵਾਇਰਸ ਬਾਰੇ ਜਾਗਰੂਕਤਾ ਪੈਦਾ ਕਰਨਾ ਸਾਡਾ ਫਰਜ਼ ਬਣਦਾ ਹੈ ਤਾਂ ਜੋ ਮਹਾਂਮਾਰੀ ਨੂੰ ਜਲਦੀ ਤੋਂ ਜਲਦੀ ਰੋਕਿਆ ਜਾ ਸਕੇ. ਇਹ ਵੈਬਸਾਈਟ ਆਪਣੀਆਂ ਖੇਤਰੀ ਭਾਸ਼ਾਵਾਂ ਵਿੱਚ ਮਹਾਂਮਾਰੀ ਬਾਰੇ ਲਾਈਵ ਅਪਡੇਟਾਂ ਪ੍ਰਦਾਨ ਕਰੇਗੀ.",
         MARATHI:""
     },
     "SUB_TITLE":{
@@ -42,7 +54,8 @@ const variables = {
         ENGLISH:"(Focused on India)",
         BENGALI:"(ভারতকে কেন্দ্র করে)",
         TAMIL:"(இந்தியா மீது கவனம் செலுத்தியது)",
-        TELGUE:"",
+        TELGUE:"భారతదేశంపై దృష్టి పెట్టారు",
+        PUNJABI:"ਭਾਰਤ 'ਤੇ ਕੇਂਦਰਤ",
         MARATHI:""
     },
     LANGUAGE:{
@@ -50,7 +63,8 @@ const variables = {
         ENGLISH:"Language",
         BENGALI:"ভাষা",
         TAMIL:"மொழி",
-        TELGUE:"భాష",
+        TELGUE:"భాషా",
+        PUNJABI:"ਭਾਸ਼ਾ",
         MARATHI:"भाषा"
     },
     INDIAN_STATS_TABLE:{
@@ -59,7 +73,8 @@ const variables = {
             ENGLISH:"State",
             BENGALI:"রাষ্ট্র",
             TAMIL:"நிலை",
-            TELGUE:"",
+            TELGUE:"రాష్ట్రం",
+            PUNJABI:"ਰਾਜ",
             MARATHI:""
         },
         INDIANS:{
@@ -67,7 +82,8 @@ const variables = {
             ENGLISH:"Indian",
             BENGALI:"ভারতীয়",
             TAMIL:"இந்தியன்",
-            TELGUE:"",
+            TELGUE:"భారత",
+            PUNJABI:"ਭਾਰਤੀ",
             MARATHI:""
         },
         FOREIGNERS:{
@@ -75,15 +91,17 @@ const variables = {
             ENGLISH:"Foreigners",
             BENGALI:"বিদেশীদের",
             TAMIL:"வெளிநாட்டினர்",
-            TELGUE:"",
+            TELGUE:"విదేశీయులు",
+            PUNJABI:"ਵਿਦੇਸ਼ੀ",
             MARATHI:""
         },
         DEATHS:{
             HINDI:"मृत्यु",
-            ENGLISH:"deaths",
+            ENGLISH:"Deaths",
             BENGALI:"মৃত্যু",
             TAMIL:"இறப்புகள்",
-            TELGUE:"",
+            TELGUE:"మరణాలు",
+            PUNJABI:"ਮੌਤ",
             MARATHI:""
         }
     },
@@ -92,7 +110,8 @@ const variables = {
         ENGLISH:"Worldwide Epidemic Updates",
         BENGALI:"বিশ্বব্যাপী মহামারী আপডেট",
         TAMIL:"உலகளாவிய தொற்றுநோய் புதுப்பிப்புகள்",
-        TELGUE:"",
+        TELGUE:"ప్రపంచవ్యాప్త అంటువ్యాధి నవీకరణలు",
+        PUNJABI:"ਵਿਸ਼ਵਵਿਆਪੀ ਮਹਾਮਾਰੀ ਦੇ ਅਪਡੇਟਸ",
         MARATHI:""
     },
     "GLOBAL_STATUS_TOTAL_NEW_CASES":{
@@ -100,7 +119,8 @@ const variables = {
         ENGLISH:"total new cases today",
         BENGALI:"আজ মোট নতুন মামলা",
         TAMIL:"இன்று மொத்த புதிய வழக்குகள்",
-        TELGUE:"",
+        TELGUE:"ఈ రోజు మొత్తం కొత్త కేసులు",
+        PUNJABI:"ਅੱਜ ਕੁੱਲ ਨਵੇਂ ਕੇਸ",
         MARATHI:""
     },
     "GLOBAL_STATUS_TOTAL_NEW_DEATHS":{
@@ -108,7 +128,8 @@ const variables = {
         ENGLISH:"new deaths today",
         BENGALI:"আজ নতুন মৃত্যু",
         TAMIL:"இன்று புதிய மரணங்கள்",
-        TELGUE:"",
+        TELGUE:"ఈ రోజు కొత్త మరణాలు",
+        PUNJABI:"ਅੱਜ ਨਵੀਂ ਮੌਤ",
         MARATHI:""
     },
     "GLOBAL_STATUS_TOTAL_DEATHS":{
@@ -116,7 +137,8 @@ const variables = {
         ENGLISH:"total deaths",
         BENGALI:"মোট মৃত্যু",
         TAMIL:"மொத்த இறப்புகள்",
-        TELGUE:"",
+        TELGUE:"మొత్తం మరణాలు",
+        PUNJABI:"ਕੁੱਲ ਮੌਤ",
         MARATHI:""
     },
     "GLOBAL_STATUS_TOTAL_SERIOUS":{
@@ -124,7 +146,8 @@ const variables = {
         ENGLISH:"total serious cases",
         BENGALI:"মোট গুরুতর মামলা",
         TAMIL:"மொத்த தீவிர வழக்குகள்",
-        TELGUE:"",
+        TELGUE:"మొత్తం తీవ్రమైన కేసులు",
+        PUNJABI:"ਕੁੱਲ ਗੰਭੀਰ ਮਾਮਲੇ",
         MARATHI:""
     },
     "GLOBAL_STATUS_TOTAL_CASES":{
@@ -132,7 +155,8 @@ const variables = {
         ENGLISH:"total cases",
         BENGALI:"মোট মামলা",
         TAMIL:"மொத்த வழக்குகள்",
-        TELGUE:"",
+        TELGUE:"మొత్తం కేసులు",
+        PUNJABI:"ਕੁੱਲ ਕੇਸ",
         MARATHI:""
     },
     "GLOBAL_STATUS_TOTAL_ACTIVE":{
@@ -140,7 +164,8 @@ const variables = {
         ENGLISH:"total active cases",
         BENGALI:"মোট সক্রিয় কেস",
         TAMIL:"மொத்த செயலில் உள்ள வழக்குகள்",
-        TELGUE:"",
+        TELGUE:"మొత్తం క్రియాశీల కేసులు",
+        PUNJABI:"ਕੁੱਲ ਕਿਰਿਆਸ਼ੀਲ ਮਾਮਲੇ",
         MARATHI:""
     },
     "GLOBAL_STATUS_TOTAL_RECOVERED":{
@@ -148,7 +173,8 @@ const variables = {
         ENGLISH:"total recovered",
         BENGALI:"মোট পুনরুদ্ধার",
         TAMIL:"மொத்தம் மீட்கப்பட்டது",
-        TELGUE:"",
+        TELGUE:"మొత్తం కోలుకుంది",
+        PUNJABI:"ਕੁੱਲ ਬਰਾਮਦ",
         MARATHI:""
     },
     "GLOBAL_STATUS_TOTAL_UNRESOLVED":{
@@ -156,7 +182,8 @@ const variables = {
         ENGLISH:"total unresolved",
         BENGALI:"মোট অমীমাংসিত",
         TAMIL:"மொத்தம் தீர்க்கப்படாதது",
-        TELGUE:"",
+        TELGUE:"మొత్తం పరిష్కరించబడలేదు",
+        PUNJABI:"ਕੁੱਲ ਅਣਸੁਲਝਿਆ",
         MARATHI:""
     },
     "COUNTRY_STATUS_HEADLINE":{
@@ -164,7 +191,8 @@ const variables = {
         ENGLISH:"Country Wide Pandemic Updates",
         BENGALI:"কান্ট্রি ওয়াইড মহামারী আপডেট",
         TAMIL:"நாடு முழுவதும் தொற்றுநோய் புதுப்பிப்புகள்",
-        TELGUE:"",
+        TELGUE:"కంట్రీ వైడ్ పాండమిక్ నవీకరణలు",
+        PUNJABI:"ਦੇਸ਼ ਵਿਆਪੀ ਮਹਾਂਮਾਰੀ ਸੰਬੰਧੀ ਅਪਡੇਟਾਂ",
         MARATHI:""
     },
     "COUNTRY_STATUS_NEW_CASES":{
@@ -172,7 +200,8 @@ const variables = {
         ENGLISH:"new cases today",
         BENGALI:"আজ নতুন মামলা",
         TAMIL:"இன்று புதிய வழக்குகள்",
-        TELGUE:"",
+        TELGUE:"ఈ రోజు కొత్త కేసులు",
+        PUNJABI:"ਅੱਜ ਨਵੇਂ ਕੇਸ",
         MARATHI:""
     },
     "COUNTRY_STATUS_NEW_DEATHS":{
@@ -180,7 +209,8 @@ const variables = {
         ENGLISH:"total deaths today",
         BENGALI:"আজ মোট মৃত্যু",
         TAMIL:"இன்று மொத்த இறப்புகள்",
-        TELGUE:"",
+        TELGUE:"ఈ రోజు మొత్తం మరణాలు",
+        PUNJABI:"ਕੁੱਲ ਮੌਤ ਅੱਜ",
         MARATHI:""
     },
     "COUNTRY_STATUS_TOTAL_DEATHS":{
@@ -188,7 +218,8 @@ const variables = {
         ENGLISH:"total deaths",
         BENGALI:"মোট মৃত্যু",
         TAMIL:"மொத்த இறப்புகள்",
-        TELGUE:"",
+        TELGUE:"మొత్తం మరణాలు",
+        PUNJABI:"ਕੁੱਲ ਮੌਤ",
         MARATHI:""
     },
     "COUNTRY_STATUS_TOTAL_SERIOUS":{
@@ -196,7 +227,8 @@ const variables = {
         ENGLISH:"total serious cases",
         BENGALI:"মোট গুরুতর মামলা",
         TAMIL:"மொத்த தீவிர வழக்குகள்",
-        TELGUE:"",
+        TELGUE:"మొత్తం తీవ్రమైన కేసులు",
+        PUNJABI:"ਕੁੱਲ ਗੰਭੀਰ ਮਾਮਲੇ",
         MARATHI:""
     },
     "COUNTRY_STATUS_TOTAL_CASES":{
@@ -204,7 +236,8 @@ const variables = {
         ENGLISH:"total cases",
         BENGALI:"মোট মামলা",
         TAMIL:"மொத்த வழக்குகள்",
-        TELGUE:"",
+        TELGUE:"మొత్తం కేసులు",
+        PUNJABI:"ਕੁੱਲ ਕੇਸ",
         MARATHI:""
     },
     "COUNTRY_STATUS_TOTAL_ACTIVE":{
@@ -212,7 +245,8 @@ const variables = {
         ENGLISH:"total active cases",
         BENGALI:"মোট সক্রিয় কেস",
         TAMIL:"மொத்த செயலில் உள்ள வழக்குகள்",
-        TELGUE:"",
+        TELGUE:"మొత్తం క్రియాశీల కేసులు",
+        PUNJABI:"ਕੁੱਲ ਕਿਰਿਆਸ਼ੀਲ ਮਾਮਲੇ",
         MARATHI:""
     },
     "COUNTRY_STATUS_TOTAL_RECOVERED":{
@@ -220,7 +254,8 @@ const variables = {
         ENGLISH:"total recovered cases",
         BENGALI:"মোট পুনরুদ্ধার মামলা",
         TAMIL:"மொத்த மீட்கப்பட்ட வழக்குகள்",
-        TELGUE:"",
+        TELGUE:"మొత్తం కోలుకున్న కేసులు",
+        PUNJABI:"ਕੁੱਲ ਬਰਾਮਦ ਕੇਸ",
         MARATHI:""
     },
     "COUNTRY_STATUS_TOTAL_UNRESOLVED":{
@@ -228,7 +263,8 @@ const variables = {
         ENGLISH:"total unresolved cases",
         BENGALI:"মোট অমীমাংসিত কেস",
         TAMIL:"தீர்க்கப்படாத மொத்த வழக்குகள்",
-        TELGUE:"",
+        TELGUE:"మొత్తం పరిష్కరించని కేసులు",
+        PUNJABI:"ਕੁੱਲ ਅਣਸੁਲਝੇ ਕੇਸ",
         MARATHI:""
     },
     "COUNTRY_TIMELINE_HEADLINE":{
@@ -236,7 +272,8 @@ const variables = {
         ENGLISH:"Countrywide pandemic spread timeline",
         BENGALI:"দেশব্যাপী মহামারী ছড়িয়ে টাইমলাইন",
         TAMIL:"நாடு தழுவிய தொற்றுநோய் பரவல் காலவரிசை",
-        TELGUE:"",
+        TELGUE:"దేశవ్యాప్తంగా మహమ్మారి వ్యాప్తి కాలక్రమం",
+        PUNJABI:"ਦੇਸ਼ ਵਿਆਪੀ ਮਹਾਂਮਾਰੀ ਫੈਲਣ ਦੀ ਟਾਈਮਲਾਈਨ",
         MARATHI:""
     },
     "CHART":{
@@ -245,7 +282,8 @@ const variables = {
             ENGLISH:"This is a timeline to show the spread of Coronavirus in India",
             BENGALI:"এটি ভারতে করোনাভাইরাস ছড়িয়ে দেওয়ার সময়সীমা",
             TAMIL:"இந்தியாவில் கொரோனா வைரஸ் பரவுவதைக் காட்ட இது ஒரு காலவரிசை",
-            TELGUE:"",
+            TELGUE:"భారతదేశంలో కరోనావైరస్ యొక్క వ్యాప్తిని చూపించడానికి ఇది ఒక కాలక్రమం",
+            PUNJABI:"ਇਹ ਭਾਰਤ ਵਿੱਚ ਕੋਰੋਨਾਵਾਇਰਸ ਦੇ ਫੈਲਣ ਨੂੰ ਦਰਸਾਉਣ ਲਈ ਇੱਕ ਸਮਾਂ ਰੇਖਾ ਹੈ",
             MARATHI:""
         },
         SOURCE:{
@@ -254,6 +292,7 @@ const variables = {
             BENGALI:"",
             TAMIL:"",
             TELGUE:"",
+            PUNJABI:"",
             MARATHI:""
         },
         SERIES_NAME:{
@@ -261,7 +300,8 @@ const variables = {
             ENGLISH:"Infected cases",
             BENGALI:"সংক্রামিত মামলা",
             TAMIL:"பாதிக்கப்பட்ட வழக்குகள்",
-            TELGUE:"",
+            TELGUE:"సోకిన కేసులు",
+            PUNJABI:"ਸੰਕਰਮਿਤ ਕੇਸ",
             MARATHI:""
         },
         DESCRIPTION:{
@@ -269,7 +309,8 @@ const variables = {
             ENGLISH:"This chart shows the trend in infected people count has increased in India.",
             BENGALI:"এই চার্টটি দেখায় যে ভারতে সংক্রামিত মানুষের সংখ্যা কত বৃদ্ধি পেয়েছে।",
             TAMIL:"இந்த விளக்கப்படம் இந்தியாவில் பாதிக்கப்பட்டவர்களின் எண்ணிக்கை அதிகரித்துள்ளது என்பதைக் காட்டுகிறது.",
-            TELGUE:"",
+            TELGUE:"ఈ చార్ట్ భారతదేశంలో సోకిన వారి సంఖ్య పెరిగినట్లు చూపిస్తుంది.",
+            PUNJABI:"ਇਹ ਚਾਰਟ ਦਰਸਾਉਂਦਾ ਹੈ ਕਿ ਸੰਕਰਮਿਤ ਲੋਕਾਂ ਦੀ ਗਿਣਤੀ ਭਾਰਤ ਵਿੱਚ ਵੱਧ ਗਈ ਹੈ।",
             MARATHI:""
         }
     },
@@ -278,7 +319,8 @@ const variables = {
         ENGLISH:"Click below to read the complete information released by the Government of India.",
         BENGALI:"ভারত সরকার প্রকাশিত সম্পূর্ণ তথ্য পড়তে এখানে ক্লিক করুন।",
         TAMIL:"இந்திய அரசு வெளியிட்டுள்ள முழுமையான தகவல்களைப் படிக்க கீழே கிளிக் செய்க.",
-        TELGUE:"",
+        TELGUE:"భారత ప్రభుత్వం విడుదల చేసిన పూర్తి సమాచారాన్ని చదవడానికి క్రింద క్లిక్ చేయండి.",
+        PUNJABI:"ਭਾਰਤ ਸਰਕਾਰ ਦੁਆਰਾ ਜਾਰੀ ਕੀਤੀ ਗਈ ਪੂਰੀ ਜਾਣਕਾਰੀ ਨੂੰ ਪੜ੍ਹਨ ਲਈ ਹੇਠਾਂ ਕਲਿੱਕ ਕਰੋ.",
         MARATHI:""
     },
     "COUNTRY":{
@@ -286,7 +328,8 @@ const variables = {
         ENGLISH:"country",
         BENGALI:"দেশ",
         TAMIL:"நாடு",
-        TELGUE:"",
+        TELGUE:"దేశంలో",
+        PUNJABI:"ਦੇਸ਼",
         MARATHI:""
     },
     "TOTAL_CASES":{
@@ -294,7 +337,8 @@ const variables = {
         ENGLISH:"total cases",
         BENGALI:"মোট মামলা",
         TAMIL:"மொத்த வழக்குகள்",
-        TELGUE:"",
+        TELGUE:"మొత్తం కేసు",
+        PUNJABI:"ਕੁੱਲ ਕੇਸ",
         MARATHI:""
     },
     "TOTAL_CASES_TODAY":{
@@ -302,7 +346,8 @@ const variables = {
         ENGLISH:"cases today",
         BENGALI:"মামলা আজ",
         TAMIL:"வழக்குகள் இன்று",
-        TELGUE:"",
+        TELGUE:"నేడు కేసులు",
+        PUNJABI:"ਕੇਸ ਅੱਜ",
         MARATHI:""
     },
     "TOTAL_DEATHS":{
@@ -310,7 +355,8 @@ const variables = {
         ENGLISH:"total deaths",
         BENGALI:"মোট মৃত্যু",
         TAMIL:"மொத்த இறப்புகள்",
-        TELGUE:"",
+        TELGUE:"మొత్తం మరణం",
+        PUNJABI:"ਕੁੱਲ ਮੌਤ",
         MARATHI:""
     },
     "TAKE_CARE_STAY_SAFE":{
@@ -318,7 +364,8 @@ const variables = {
         ENGLISH:"Take care, Stay safe",
         BENGALI:"যত্ন নিন, নিরাপদে থাকুন",
         TAMIL:"கவனமாக இருங்கள், பாதுகாப்பாக இருங்கள்",
-        TELGUE:"",
+        TELGUE:"జాగ్రత్తగా ఉండండి, సురక్షితంగా ఉండండి",
+        PUNJABI:"ਖਿਆਲ ਰੱਖੋ, ਸੁਰੱਖਿਅਤ ਰਹੋ",
         MARATHI:""
     },
     "GITHUB_CTA_TEXT":{
@@ -326,7 +373,8 @@ const variables = {
         ENGLISH:"GitHub",
         BENGALI:"GitHub",
         TAMIL:"GitHub",
-        TELGUE:"",
+        TELGUE:"GitHub",
+        PUNJABI:"GitHub",
         MARATHI:""
     },
     "SHARE_CTA_TEXT":{
@@ -334,7 +382,47 @@ const variables = {
         ENGLISH:"Share with friends & family",
         BENGALI:"বন্ধুদের এবং পরিবারের সাথে ভাগ করুন",
         TAMIL:"நண்பர்கள் மற்றும் குடும்பத்தினருடன் பகிரவும்",
-        TELGUE:"",
+        TELGUE:"స్నేహితులు & కుటుంబ సభ్యులతో భాగస్వామ్యం చేయండి",
+        PUNJABI:"ਦੋਸਤਾਂ ਅਤੇ ਪਰਿਵਾਰ ਨਾਲ ਸਾਂਝਾ ਕਰੋ",
+        MARATHI:""
+    },
+    SAHRE_DESCRIPTION:{
+        HINDI:`आज के भारतीय आँकड़े ->
+                     मृत्यु: <total_deaths_in_india>,
+                     मामले: <total_cases_in_india>
+                     कोरोनावायरस पर नए अपडेट प्राप्त करें, लाइव आँकड़े देखें और इस घातक निराशा के बारे में सूचित रहें।
+                     दुनिया भर में <total_cases_in_world> से अधिक लोग प्रभावित हैं,
+                     सावधानी बरतकर खुद को बचाएं।`,
+        ENGLISH:`Today's Indian stats -> 
+                    Death: <total_deaths_in_india>,
+                    Cases:<total_cases_in_india> .
+                    Get new updates on coronavirus, see live stats and stay informed about this deadly desease.
+                    More than <total_cases_in_world> people around the world are affected,
+                    save yourself by taking precautions.`,
+        BENGALI:`আজকের ভারতীয় পরিসংখ্যান ->
+                     মৃত্যু: <total_deaths_in_india>,
+                     মামলা: <total_cases_in_india>।
+                     করোনাভাইরাস সম্পর্কে নতুন আপডেট পান, সরাসরি পরিসংখ্যান দেখুন এবং এই মারাত্মক ডিজেজ সম্পর্কে অবহিত থাকুন।
+                     বিশ্বজুড়ে <total_cases_in_world> এরও বেশি লোক আক্রান্ত হয়েছে,
+                     সাবধানতা অবলম্বন করে নিজেকে বাঁচান`,
+        TAMIL:`இன்றைய இந்திய புள்ளிவிவரங்கள் ->
+                     மரணம்: <total_deaths_in_india>,
+                     வழக்குகள்: <total_cases_in_india>.
+                     கொரோனா வைரஸைப் பற்றிய புதிய புதுப்பிப்புகளைப் பெறுங்கள், நேரடி புள்ளிவிவரங்களைப் பார்க்கவும், இந்த கொடிய இறப்பு பற்றித் தெரிவிக்கவும்.
+                     உலகெங்கிலும் <total_cases_in_world> க்கும் மேற்பட்டோர் பாதிக்கப்பட்டுள்ளனர்,
+                     முன்னெச்சரிக்கைகள் எடுத்து உங்களை காப்பாற்றுங்கள்.`,
+        TELGUE:`నేటి భారతీయ గణాంకాలు ->
+                     మరణం: <total_deaths_in_india>,
+                     కేసులు: <total_cases_in_india>.
+                     కరోనావైరస్ గురించి కొత్త నవీకరణలను పొందండి, ప్రత్యక్ష గణాంకాలను చూడండి మరియు ఈ ఘోరమైన డీసీజ్ గురించి తెలియజేయండి.
+                     ప్రపంచవ్యాప్తంగా <total_cases_in_world> మందికి పైగా ప్రజలు ప్రభావితమయ్యారు,
+                     జాగ్రత్తలు తీసుకోవడం ద్వారా మిమ్మల్ని మీరు రక్షించుకోండి.`,
+        PUNJABI:`ਅੱਜ ਦੇ ਭਾਰਤੀ ਅੰਕੜੇ ->
+                     ਮੌਤ: <total_deaths_in_india>,
+                     ਕੇਸ: <total_cases_in_india>.
+                     ਕੋਰੋਨਾਵਾਇਰਸ 'ਤੇ ਨਵੇਂ ਅਪਡੇਟਾਂ ਪ੍ਰਾਪਤ ਕਰੋ, ਲਾਈਵ ਅੰਕੜੇ ਵੇਖੋ ਅਤੇ ਇਸ ਘਾਤਕ ਡੀਸੀਜ਼ ਬਾਰੇ ਜਾਣੂ ਕਰੋ.
+                     ਦੁਨੀਆ ਭਰ ਦੇ <total_cases_in_world> ਤੋਂ ਵੱਧ ਲੋਕ ਪ੍ਰਭਾਵਿਤ ਹਨ,
+                     ਸਾਵਧਾਨੀ ਵਰਤ ਕੇ ਆਪਣੇ ਆਪ ਨੂੰ ਬਚਾਓ.`,
         MARATHI:""
     }
 }
