@@ -16,7 +16,7 @@ window.onload=()=>{
     Gb.getTopN();
 }
 //share button event listener
-if (!navigator.share) {
+if (navigator.share) {
     const shareButton=document.querySelector('#share-button');
     shareButton.addEventListener('click', event => {
         const metas=document.querySelectorAll('meta');
