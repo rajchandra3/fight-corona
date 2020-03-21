@@ -3,7 +3,7 @@ import Country from './ui/country.js';
 import Store from './common/local_storage.js';
 import Translate from './ui/translation/translate.js';
 import Config from './requests/config.js';
-import translate from './ui/translation/translate.js';
+import v from './ui/translation/variables.js';
 
 window.onload=()=>{
     Country.getIndianStats();
@@ -16,15 +16,14 @@ window.onload=()=>{
     
 }
 
-
 //share button event listener
 const shareButton=document.querySelector('#share-button');
 if (navigator.share) {
     shareButton.addEventListener('click', event => {
         const metas=document.querySelectorAll('meta');
-        let description_text=translate.v.SAHRE_DESCRIPTION[get_language()].replace("total_deaths_in_india",document.querySelector('.country-status-total-deaths').textContent);
-            description_text=description_text.replace("<total_cases_in_india>",document.querySelector('.country-status-total').textContent);
-            description_text=description_text.replace("<total_cases_in_world>",document.querySelector('.text-large gbl-status-total').textContent);
+        let description_text=v.SAHRE_DESCRIPTION[Translate.get_language()].replace("<total_deaths_in_india>",document.querySelector('.country-status-total-deaths').textContent);
+        description_text=description_text.replace("<total_cases_in_india>",document.querySelector('.country-status-total').textContent);
+        description_text=description_text.replace("<total_cases_in_world>",document.querySelector('.gbl-status-total').textContent);
         // for(let meta of metas){
         //     if(meta.getAttribute('name')=='description')
         //         description_text=meta.getAttribute('content');

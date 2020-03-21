@@ -94,4 +94,4 @@ const set_langauge_options = ()=>{
 
 //add event listener to select
 document.querySelector('#choose-language').addEventListener('input',upadate_language);
-export default {get_language,translate_ui,set_langauge_options}
+export default {get_language,translate_ui,set_langauge_options,v}
