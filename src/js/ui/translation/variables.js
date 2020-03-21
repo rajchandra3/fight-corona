@@ -387,42 +387,12 @@ const variables = {
         MARATHI:""
     },
     SAHRE_DESCRIPTION:{
-        HINDI:`आज के भारतीय आँकड़े ->
-                     मृत्यु: <total_deaths_in_india>,
-                     मामले: <total_cases_in_india>
-                     कोरोनावायरस पर नए अपडेट प्राप्त करें, लाइव आँकड़े देखें और इस घातक निराशा के बारे में सूचित रहें।
-                     दुनिया भर में <total_cases_in_world> से अधिक लोग प्रभावित हैं,
-                     सावधानी बरतकर खुद को बचाएं।`,
-        ENGLISH:`Today's Indian stats -> 
-                    Death: <total_deaths_in_india>,
-                    Cases:<total_cases_in_india> .
-                    Get new updates on coronavirus, see live stats and stay informed about this deadly desease.
-                    More than <total_cases_in_world> people around the world are affected,
-                    save yourself by taking precautions.`,
-        BENGALI:`আজকের ভারতীয় পরিসংখ্যান ->
-                     মৃত্যু: <total_deaths_in_india>,
-                     মামলা: <total_cases_in_india>।
-                     করোনাভাইরাস সম্পর্কে নতুন আপডেট পান, সরাসরি পরিসংখ্যান দেখুন এবং এই মারাত্মক ডিজেজ সম্পর্কে অবহিত থাকুন।
-                     বিশ্বজুড়ে <total_cases_in_world> এরও বেশি লোক আক্রান্ত হয়েছে,
-                     সাবধানতা অবলম্বন করে নিজেকে বাঁচান`,
-        TAMIL:`இன்றைய இந்திய புள்ளிவிவரங்கள் ->
-                     மரணம்: <total_deaths_in_india>,
-                     வழக்குகள்: <total_cases_in_india>.
-                     கொரோனா வைரஸைப் பற்றிய புதிய புதுப்பிப்புகளைப் பெறுங்கள், நேரடி புள்ளிவிவரங்களைப் பார்க்கவும், இந்த கொடிய இறப்பு பற்றித் தெரிவிக்கவும்.
-                     உலகெங்கிலும் <total_cases_in_world> க்கும் மேற்பட்டோர் பாதிக்கப்பட்டுள்ளனர்,
-                     முன்னெச்சரிக்கைகள் எடுத்து உங்களை காப்பாற்றுங்கள்.`,
-        TELGUE:`నేటి భారతీయ గణాంకాలు ->
-                     మరణం: <total_deaths_in_india>,
-                     కేసులు: <total_cases_in_india>.
-                     కరోనావైరస్ గురించి కొత్త నవీకరణలను పొందండి, ప్రత్యక్ష గణాంకాలను చూడండి మరియు ఈ ఘోరమైన డీసీజ్ గురించి తెలియజేయండి.
-                     ప్రపంచవ్యాప్తంగా <total_cases_in_world> మందికి పైగా ప్రజలు ప్రభావితమయ్యారు,
-                     జాగ్రత్తలు తీసుకోవడం ద్వారా మిమ్మల్ని మీరు రక్షించుకోండి.`,
-        PUNJABI:`ਅੱਜ ਦੇ ਭਾਰਤੀ ਅੰਕੜੇ ->
-                     ਮੌਤ: <total_deaths_in_india>,
-                     ਕੇਸ: <total_cases_in_india>.
-                     ਕੋਰੋਨਾਵਾਇਰਸ 'ਤੇ ਨਵੇਂ ਅਪਡੇਟਾਂ ਪ੍ਰਾਪਤ ਕਰੋ, ਲਾਈਵ ਅੰਕੜੇ ਵੇਖੋ ਅਤੇ ਇਸ ਘਾਤਕ ਡੀਸੀਜ਼ ਬਾਰੇ ਜਾਣੂ ਕਰੋ.
-                     ਦੁਨੀਆ ਭਰ ਦੇ <total_cases_in_world> ਤੋਂ ਵੱਧ ਲੋਕ ਪ੍ਰਭਾਵਿਤ ਹਨ,
-                     ਸਾਵਧਾਨੀ ਵਰਤ ਕੇ ਆਪਣੇ ਆਪ ਨੂੰ ਬਚਾਓ.`,
+        HINDI:`आज के भारतीय आँकड़े -> मृत्यु: <total_deaths_in_india>, मामले: <total_cases_in_india> कोरोनावायरस पर नए अपडेट प्राप्त करें, लाइव आँकड़े देखें और इस घातक निराशा के बारे में सूचित रहें। दुनिया भर में <total_cases_in_world> से अधिक लोग प्रभावित हैं, सावधानी बरतकर खुद को बचाएं।`,
+        ENGLISH:`Today's Indian stats -> Death: <total_deaths_in_india>, Cases:<total_cases_in_india> . Get new updates on coronavirus, see live stats and stay informed about this deadly desease. More than <total_cases_in_world> people around the world are affected, save yourself by taking precautions.`,
+        BENGALI:`আজকের ভারতীয় পরিসংখ্যান -> মৃত্যু: <total_deaths_in_india>, মামলা: <total_cases_in_india>। করোনাভাইরাস সম্পর্কে নতুন আপডেট পান, সরাসরি পরিসংখ্যান দেখুন এবং এই মারাত্মক ডিজেজ সম্পর্কে অবহিত থাকুন। বিশ্বজুড়ে <total_cases_in_world> এরও বেশি লোক আক্রান্ত হয়েছে, সাবধানতা অবলম্বন করে নিজেকে বাঁচান`,
+        TAMIL:`இன்றைய இந்திய புள்ளிவிவரங்கள் -> மரணம்: <total_deaths_in_india>, வழக்குகள்: <total_cases_in_india>. கொரோனா வைரஸைப் பற்றிய புதிய புதுப்பிப்புகளைப் பெறுங்கள், நேரடி புள்ளிவிவரங்களைப் பார்க்கவும், இந்த கொடிய இறப்பு பற்றித் தெரிவிக்கவும். உலகெங்கிலும் <total_cases_in_world> க்கும் மேற்பட்டோர் பாதிக்கப்பட்டுள்ளனர், முன்னெச்சரிக்கைகள் எடுத்து உங்களை காப்பாற்றுங்கள்.`,
+        TELGUE:`నేటి భారతీయ గణాంకాలు -> మరణం: <total_deaths_in_india>, కేసులు: <total_cases_in_india>. కరోనావైరస్ గురించి కొత్త నవీకరణలను పొందండి, ప్రత్యక్ష గణాంకాలను చూడండి మరియు ఈ ఘోరమైన డీసీజ్ గురించి తెలియజేయండి. ప్రపంచవ్యాప్తంగా <total_cases_in_world> మందికి పైగా ప్రజలు ప్రభావితమయ్యారు, జాగ్రత్తలు తీసుకోవడం ద్వారా మిమ్మల్ని మీరు రక్షించుకోండి.`,
+        PUNJABI:`ਅੱਜ ਦੇ ਭਾਰਤੀ ਅੰਕੜੇ -> ਮੌਤ: <total_deaths_in_india>, ਕੇਸ: <total_cases_in_india>. ਕੋਰੋਨਾਵਾਇਰਸ 'ਤੇ ਨਵੇਂ ਅਪਡੇਟਾਂ ਪ੍ਰਾਪਤ ਕਰੋ, ਲਾਈਵ ਅੰਕੜੇ ਵੇਖੋ ਅਤੇ ਇਸ ਘਾਤਕ ਡੀਸੀਜ਼ ਬਾਰੇ ਜਾਣੂ ਕਰੋ. ਦੁਨੀਆ ਭਰ ਦੇ <total_cases_in_world> ਤੋਂ ਵੱਧ ਲੋਕ ਪ੍ਰਭਾਵਿਤ ਹਨ, ਸਾਵਧਾਨੀ ਵਰਤ ਕੇ ਆਪਣੇ ਆਪ ਨੂੰ ਬਚਾਓ.`,
         MARATHI:""
     }
 }

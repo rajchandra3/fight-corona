@@ -15,10 +15,9 @@ window.onload=()=>{
     Country.getTimeline();
     Gb.getTopN();
 }
-
 //share button event listener
-const shareButton=document.querySelector('#share-button');
-if (navigator.share) {
+if (!navigator.share) {
+    const shareButton=document.querySelector('#share-button');
     shareButton.addEventListener('click', event => {
         const metas=document.querySelectorAll('meta');
         let description_text=v.SAHRE_DESCRIPTION[Translate.get_language()].replace("<total_deaths_in_india>",document.querySelector('.country-status-total-deaths').textContent);
