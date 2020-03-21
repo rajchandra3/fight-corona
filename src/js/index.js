@@ -30,7 +30,7 @@ if (!navigator.share) {
         const share_data={
             title: document.title,
             text: description_text,
-            url: `${Config.urls.app_url}/redirects/app-coronavirus-tracker?url=${document.URL}&lang=${Translate.get_language()}&medium=in-app`
+            url: `${Config.urls.app_url}/redirect/app-coronavirus-tracker?url=${document.URL}&lang=${Translate.get_language()}&medium=in-app`
         };
         
         navigator.share(share_data)
