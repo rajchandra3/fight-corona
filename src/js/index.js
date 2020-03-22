@@ -10,6 +10,7 @@ Translate.set_langauge_options(); //sets values in choose language
 !Store.getItem('default_language')?Store.setItem('default_language',document.getElementById('choose-language').value):Translate.translate_ui();
 
 const refresh_stats=()=>{
+    $('.toast').toast('show');
     Share.update_shared_stats();
     Country.getIndianStats();
     Country.getStatus();
@@ -20,7 +21,7 @@ const refresh_stats=()=>{
 window.onload=()=>{
     refresh_stats();
 }
-document.querySelector('.refresh-stats'),addEventListener('click',refresh_stats);
+document.querySelector('.refresh_stats').addEventListener('click',refresh_stats);
 //share button event listener
 if (navigator.share) {
     const shareButton=document.querySelector('#share-button');
