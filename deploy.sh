@@ -8,8 +8,9 @@ git push
 cd ..
 rm -rf ./corona-go
 mkdir ./corona-go
-cp -a /fight-covid19/. /corona-go/
+cp -a ./fight-covid19/. ./corona-go/
 cd ./corona-go
+echo "corona-go.info" > ./CNAME
 git init
 git add .
 git commit -m "$1"
