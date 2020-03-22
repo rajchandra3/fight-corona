@@ -9,7 +9,7 @@ import Share from '../js/requests/share.js';
 Translate.set_langauge_options(); //sets values in choose language 
 !Store.getItem('default_language')?Store.setItem('default_language',document.getElementById('choose-language').value):Translate.translate_ui();
 
-window.onload=()=>{
+const refresh_stats=()=>{
     Share.update_shared_stats();
     Country.getIndianStats();
     Country.getStatus();
@@ -17,6 +17,10 @@ window.onload=()=>{
     Country.getTimeline();
     Gb.getTopN();
 }
+window.onload=()=>{
+    refresh_stats();
+}
+document.querySelector('.refresh-stats'),addEventListener('click',refresh_stats);
 //share button event listener
 if (navigator.share) {
     const shareButton=document.querySelector('#share-button');

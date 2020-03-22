@@ -6,11 +6,20 @@ git push
 
 #push in the other repo as well
 cd ..
+echo "moved out of main folder"
 rm -rf ./corona-go
+echo "removed old repo"
 mkdir ./corona-go
+echo "made a new folder"
 cp -a ./fight-covid19/. ./corona-go/
+echo "copied the files to new folder"
 cd ./corona-go
+echo "enter the new folder"
 echo "corona-go.info" > ./CNAME
+echo "change cname"
+rm -rf .git
+echo "removed .git"
+
 git init
 git add .
 git commit -m "$1"
