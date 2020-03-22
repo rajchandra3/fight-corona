@@ -8,7 +8,7 @@ git push
 cd ..
 rm -rf ./corona-go
 mkdir ./corona-go
-cp ./fight-covid19 ./corona-go
+cp -a /fight-covid19/. /corona-go/
 cd ./corona-go
 git init
 git add .
