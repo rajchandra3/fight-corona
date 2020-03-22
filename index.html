@@ -108,9 +108,9 @@
                     </div>
                 </div>
             </div>
-            <nav class="col-sm-12 navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" href="#">
-                    <img src="./src/images/icons/icon-512x512.png" width="30" height="30" class="d-inline-block align-top rounded" alt="">
+            <nav class="col-sm-12 navbar fixed-bottom navbar-expand-sm navbar-light bg-light">
+                <a class="navbar-brand" href="#" class="refersh-stats">
+                    <img src="./src/images/icons/icon-512x512.png" width="40" height="40" class="d-inline-block align-top rounded" alt="">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
@@ -135,11 +135,28 @@
                         <li class="nav-item">
                             <a class="nav-link translate-gg" href="#gg">Government Guidelines</a>
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a class="nav-link translate-st" href="#st">Share Target</a>
-                        </li>
+                        </li> -->
                         <li class="nav-item">
                             <a class="nav-link translate-ss" href="#ss">Say Something!</a>
+                        </li>
+                        <li class="nav-item">
+
+                            <!-- share button -->
+                            <div class="p-3 share-btn-container text-center">
+                                <button class="btn btn-success text-white" id="share-button"><span class="translate-share-cta-text">Share with Friends</span>&nbsp;
+                                    <img src="src/images/share-icon.svg" class="white-icons m-1" height="25px" width="25px" aria-hidden="true">
+                                </button>
+                                
+                                <!-- share target indicator-->
+                                <div class="col-sm-12 p-2 progress-container">
+                                    <div class="progress">
+                                        <div class="progress-bar bg-primary" id="complete-pbar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar bg-light" id="incomplete-pbar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -305,30 +322,14 @@
             </div>
 
             <!-- Appeal -->
-            <div class="col-lg-12 header bg-clouds" id="st"><span class="translate-st"> </span></div>
+            <!-- <div class="col-lg-12 header bg-clouds" id="st"><span class="translate-st"> </span></div>
             <div class="col-lg-12 text-center no-padding">
                 <div class="jumbotron jumbotron-fluid no-margin">
                     <div class="container p-4">
                         <h1 class="translate-take-care-stay-safe">ध्यान रखें, सुरक्षित रहें</h1>
-                        <!-- <div class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</div> -->
-                    </div>
-
-                    <!-- share button -->
-                    <div class="p-3 share-btn-container">
-                        </div>
-                        <button class="btn btn-success text-white" id="share-button"><span class="translate-share-cta-text">Share with Friends</span>&nbsp;
-                            <img src="src/images/share-icon.svg" class="white-icons m-1" height="25px" width="25px" aria-hidden="true">
-                        </button>
-                        
-                        <!-- share target indicator-->
-                        <div class="col-sm-12 p-5 progress-container">
-                            <div class="progress">
-                                <div class="progress-bar bg-primary" id="complete-pbar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                                <div class="progress-bar bg-light" id="incomplete-pbar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <!-- facebook comment plugin -->
             <div class="col-lg-12 header bg-clouds" id="ss"><span class="translate-ss"> </span></div>
@@ -345,7 +346,7 @@
                     </a>
                 </div> -->
                 <!-- footer for apps -->
-                <div class="p-4 m-1 text-white text-center">
+                <div class="p-5 m-1 mb-3 text-white text-center">
                     &copy; 
                     <span id="thisYear"></span> 
                     <a href="https://www.rajchandra.me" target="_blank" class="text-primary">Raj Chandra</a>. All Rights Reserved. <br>
