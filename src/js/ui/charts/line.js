@@ -40,14 +40,7 @@ const plotChart = (chart)=>{
                 }
             }
         },
-        series: [{
-            name: chart.series.name,
-            marker: {
-                symbol: chart.series.symbol
-            },
-            data: chart.series.data
-    
-        }]
+        series: chart.series
     });
 }
 

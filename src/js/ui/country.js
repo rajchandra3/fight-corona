@@ -25,19 +25,21 @@ const getTimeline = ()=>{
         //using thevirustacker api
         // data = data[0];
         // const entries = Object.entries(data);
-        // let formatted_data=[];
+        // let total_cases_count=[];
         // let x_axis=[];
         // for (const [date, local_data] of entries) {
         //     if(date!=='stat'){
-        //         formatted_data.push(local_data.total_cases);
+        //         total_cases_count.push(local_data.total_cases);
         //         x_axis.push(date);
         //     }
         // }
         //using rootnet api
-        let formatted_data=[];
+        let total_cases_count=[];
+        let total_deaths=[];
         let x_axis=[];
         for( let regional_data of data){
-            formatted_data.push(regional_data.summary.total);
+            total_deaths.push(regional_data.summary.deaths);
+            total_cases_count.push(regional_data.summary.total);
             x_axis.push(regional_data.day);
         }
         let chart_attributes = {
@@ -50,12 +52,20 @@ const getTimeline = ()=>{
             xAxis:{
                 categories:x_axis
             },
-            formatted_data,
-            series:{
-                name:variables.CHART.SERIES_NAME[language],
-                symbol:'circle',
-                data:formatted_data
-            },
+            total_cases_count,
+            series:[{
+                name: variables.CHART.SERIES_NAME[language],
+                marker: {
+                    symbol: 'circle'
+                },
+                data: total_cases_count
+            },{
+                name: variables.TOTAL_DEATHS[language],
+                marker: {
+                    symbol: 'circle'
+                },
+                data: total_deaths
+            }],
             plotOptions:{
                 radius: 4,
                 lineColor: '#666',
@@ -64,7 +74,7 @@ const getTimeline = ()=>{
             description:variables.CHART.DESCRIPTION[language],
         }
         document.querySelector('.country-timeline-description').innerHTML=chart_attributes.description;
-        LineChart.plotChart(chart_attributes,x_axis,formatted_data);
+        LineChart.plotChart(chart_attributes,x_axis,total_cases_count);
     })
 }
 
