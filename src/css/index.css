@@ -6,6 +6,9 @@ a:hover{
     align-items: center;
     justify-content: center;
 }
+.hidden{
+    display: none !important;
+}
 .container-fluid,.row{
     margin: 0px !important;
     padding: 0px !important;

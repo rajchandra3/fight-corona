@@ -4,36 +4,41 @@ import variables from '../ui/translation/variables.js';
 import Translate from '../ui/translation/translate.js';
 
 const getStatus = ()=>{
-    let cc='IN';
-    let promise = Request.getCountryStatus(cc);
+    let promise = Request.getCountryStatus();
     promise.then((data)=>{
-        data=data[0];
-        document.querySelector('.country-status-total').innerHTML=data.total_cases;
-        document.querySelector('.country-status-total-recovered').innerHTML=data.total_recovered;
-        document.querySelector('.country-status-total-unresolved').innerHTML=data.total_unresolved;
-        document.querySelector('.country-status-total-deaths').innerHTML=data.total_deaths;
-        document.querySelector('.country-status-total-new-cases').innerHTML=data.total_new_cases_today;
-        document.querySelector('.country-status-total-new-deaths').innerHTML=data.total_new_deaths_today;
-        document.querySelector('.country-status-total-active').innerHTML=data.total_active_cases;
-        document.querySelector('.country-status-total-serious').innerHTML=data.total_serious_cases;
+        data=data.summary;
+        document.querySelector('.country-status-total').innerHTML=data.total;
+        document.querySelector('.country-status-total-recovered').innerHTML=data.discharged;
+        // document.querySelector('.country-status-total-unresolved').innerHTML=data.total_unresolved;
+        document.querySelector('.country-status-total-deaths').innerHTML=data.deaths;
+        // document.querySelector('.country-status-total-new-cases').innerHTML=data.total_new_cases_today;
+        // document.querySelector('.country-status-total-new-deaths').innerHTML=data.total_new_deaths_today;
+        // document.querySelector('.country-status-total-active').innerHTML=data.total_active_cases;
+        // document.querySelector('.country-status-total-serious').innerHTML=data.total_serious_cases;
     })
 }
 
 const getTimeline = ()=>{
     let language = Translate.get_language();
-    let cc='in';
-    let promise = Request.getCountryTimeline(cc);
+    let promise = Request.getCountryTimeline();
     promise.then((data)=>{
-        data = data[0];
-        const entries = Object.entries(data);
-        //get total cases
+        //using thevirustacker api
+        // data = data[0];
+        // const entries = Object.entries(data);
+        // let formatted_data=[];
+        // let x_axis=[];
+        // for (const [date, local_data] of entries) {
+        //     if(date!=='stat'){
+        //         formatted_data.push(local_data.total_cases);
+        //         x_axis.push(date);
+        //     }
+        // }
+        //using rootnet api
         let formatted_data=[];
         let x_axis=[];
-        for (const [date, local_data] of entries) {
-            if(date!=='stat'){
-                formatted_data.push(local_data.total_cases);
-                x_axis.push(date);
-            }
+        for( let regional_data of data){
+            formatted_data.push(regional_data.summary.total);
+            x_axis.push(regional_data.day);
         }
         let chart_attributes = {
             element:'country-timeline',
@@ -64,6 +69,7 @@ const getTimeline = ()=>{
 }
 
 const getIndianStats = ()=>{
+    //using rootnet api
     let promise = Request.getIndianRegionalData();
     promise.then((res)=>{
         let data=res.data;
