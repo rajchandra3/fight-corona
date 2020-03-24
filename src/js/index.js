@@ -14,9 +14,9 @@ const refresh_stats=()=>{
     Share.update_shared_stats();
     Country.getIndianStats();
     Country.getStatus();
-    // Gb.getStatus();
+    Gb.getStatus();
     Country.getTimeline();
-    // Gb.getTopN();
+    Gb.getTopN();
 }
 window.onload=()=>{
     refresh_stats();

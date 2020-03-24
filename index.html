@@ -103,7 +103,7 @@
                         <strong class="mr-auto">Notification</strong>
                         <small class="text-muted">just now</small>
                         <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+                        <span aria-="true">&times;</span>
                         </button>
                     </div>
                     <div class="toast-body bg-light text-dark p-2">
@@ -140,13 +140,13 @@
                             <a class="nav-link translate-is" href="#is">Indian Summary</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link translate-gs hidden" href="#gs">Global Summary</a>
+                            <a class="nav-link translate-gs " href="#gs">Global Summary</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link translate-it" href="#it">Indian Timeline</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link translate-gtac hidden" href="#gtac">Global Top Infected Countries</a>
+                            <a class="nav-link translate-gtac " href="#gtac">Global Top Infected Countries</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link translate-gg" href="#gg">Government Guidelines</a>
@@ -162,7 +162,7 @@
                             <!-- share button -->
                             <div class="p-3 share-btn-container text-center">
                                 <button class="btn btn-success text-white" id="share-button"><span class="translate-share-cta-text">Share with Friends</span>&nbsp;
-                                    <img src="src/images/share-icon.svg" class="white-icons m-1" height="25px" width="25px" aria-hidden="true">
+                                    <img src="src/images/share-icon.svg" class="white-icons m-1" height="25px" width="25px" aria-="true">
                                 </button>
                                 
                                 <!-- share target indicator-->
@@ -202,11 +202,11 @@
             <!-- Indian summary -->
             <div class="col-lg-12 header bg-turquoise text-white" id="is"><span class="translate-is">देश भर में महामारी की स्थिति </span>&nbsp;<span>🇮🇳</span></div>
             <div class="row col-lg-12 country-status-container bg-turquoise">
-                <div class="col-xs-3 col-sm-3 content-container hidden">
+                <div class="col-xs-3 col-sm-3 content-container ">
                     <div class="text-container text-large country-status-total-new-cases"></div>
                     <div class="text-container text-small translate-country-status-total-new-cases">आज कुल नए मामले</div>
                 </div>
-                <div class="col-xs-3 col-sm-3 content-container hidden">
+                <div class="col-xs-3 col-sm-3 content-container ">
                     <div class="text-container text-large country-status-total-new-deaths"></div>
                     <div class="text-container text-small translate-country-status-total-new-deaths">आज कुल नई मौतें</div>
                 </div>
@@ -214,7 +214,7 @@
                     <div class="text-container text-large country-status-total-deaths"></div>
                     <div class="text-container text-small translate-country-status-total-deaths">अब तक कुल मौतें</div>
                 </div>
-                <div class="col-xs-3 col-sm-3 content-container hidden">
+                <div class="col-xs-3 col-sm-3 content-container ">
                     <div class="text-container text-large country-status-total-serious"></div>
                     <div class="text-container text-small translate-country-status-total-serious">कुल गंभीर मामले</div>
                 </div>
@@ -222,7 +222,7 @@
                     <div class="text-container text-large country-status-total"></div>
                     <div class="text-container text-small translate-country-status-total-cases">अब तक कुल मामले</div>&nbsp;
                 </div>
-                <div class="col-xs-3 col-sm-3 content-container hidden">
+                <div class="col-xs-3 col-sm-3 content-container ">
                     <div class="text-container text-large country-status-total-active"></div>
                     <div class="text-container text-small translate-country-status-total-active">कुल सक्रिय मामले</div>
                 </div>
@@ -230,15 +230,15 @@
                     <div class="text-container text-large country-status-total-recovered"></div>
                     <div class="text-container text-small translate-country-status-total-recovered">कुल स्वस्थ हो चुके मरीज</div>
                 </div>
-                <div class="col-xs-3 col-sm-3 content-container hidden">
+                <div class="col-xs-3 col-sm-3 content-container ">
                     <div class="text-container text-large country-status-total-unresolved"></div>
                     <div class="text-container text-small translate-country-status-total-unresolved">कुल अनसुलझे मामले</div>
                 </div>
             </div>
 
             <!-- Global summary -->
-            <div class="header bg-peter-river text-white hidden" id="gs"><span class="translate-gs">विश्व भर में महामारी की स्थिति</span> &nbsp;<span>🌏</span></div>
-            <div class="row col-lg-12 gbl-status-container bg-peter-river pb-4 hidden">
+            <div class="col-lg-12 header bg-peter-river text-white" id="gs"><span class="translate-gs">विश्व भर में महामारी की स्थिति</span> &nbsp;<span>🌏</span></div>
+            <div class="row col-lg-12 gbl-status-container bg-peter-river pb-4">
                 <div class="col-xs-3 col-sm-3 content-container">
                     <div class="emoji-container display-4">😷</div>
                     <div class="text-container text-large gbl-status-total-new-cases"></div>
@@ -300,8 +300,8 @@
 
 
             <!-- Global top infected contries -->
-            <div class="col-lg-12 header bg-clouds hidden" id="gtac"><span class="translate-gtac"> </span></div>
-            <div class="col-lg-12 no-padding no-margin hidden">
+            <div class="col-lg-12 header bg-clouds " id="gtac"><span class="translate-gtac"> </span></div>
+            <div class="col-lg-12 no-padding no-margin ">
                 <table class="table table-striped no-margin">
                     <thead class="bg-dark text-white">
                         <tr>
@@ -366,9 +366,9 @@
                     &copy; 
                     <span id="thisYear"></span> 
                     <a href="https://www.rajchandra.me" target="_blank" class="text-primary">Raj Chandra</a>. All Rights Reserved. <br>
-                    <a href="https://www.rajchandra.me" target="_blank"><img src="src/images/brand-icons/globe.svg" class="white-icons text-white m-2" height="25px" width="25px" aria-hidden="true" target="_blank"></a> &nbsp;
-                    <a href="https://www.twitter.com/raj_chandra3" target="_blank"><img src="src/images/brand-icons/twitter.svg" class="white-icons text-white m-2" height="25px" width="25px" aria-hidden="true" target="_blank"></a> &nbsp;
-                    <a href="https://www.linkedin.com/in/rajchandra3/" target="_blank"><img src="src/images/brand-icons/linkedin.svg" height="25px" width="25px" class="white-icons text-white m-2" aria-hidden="true"></a>
+                    <a href="https://www.rajchandra.me" target="_blank"><img src="src/images/brand-icons/globe.svg" class="white-icons text-white m-2" height="25px" width="25px" aria-="true" target="_blank"></a> &nbsp;
+                    <a href="https://www.twitter.com/raj_chandra3" target="_blank"><img src="src/images/brand-icons/twitter.svg" class="white-icons text-white m-2" height="25px" width="25px" aria-="true" target="_blank"></a> &nbsp;
+                    <a href="https://www.linkedin.com/in/rajchandra3/" target="_blank"><img src="src/images/brand-icons/linkedin.svg" height="25px" width="25px" class="white-icons text-white m-2" aria-="true"></a>
                 </div>
                 <!-- script for year in footer -->
                 <script>
