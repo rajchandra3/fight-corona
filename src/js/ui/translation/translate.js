@@ -92,7 +92,7 @@ const upadate_language = ()=>{
 }
 
 const set_langauge_options = ()=>{
-    let current_language=get_language() || "HINDI";
+    let current_language=get_language() || "ENGLISH";
     const select_language_element = document.getElementById('choose-language');
     const entries = Object.entries(v.AVAILABLE_LANGUAGES);
     for(let [name, lang]  of entries){
