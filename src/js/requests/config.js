@@ -1,6 +1,6 @@
 // import Cookie from './cookie.js';
 
-const toggler = window.location.hostname === 'fight-corona.rajchandra.me' ? 1 : 0;
+const toggler = window.location.hostname === 'fight-corona.rajchandra.me' || window.location.hostname === 'corona-go.info' ? 1 : 0;
 const env=toggler?'production':'development';
 
 const urls={
