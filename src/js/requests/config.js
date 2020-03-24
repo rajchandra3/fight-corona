@@ -11,11 +11,4 @@ const urls={
     app_url:`${env==="production"?'https://www.rajchandra.me':'http://localhost:8060'}`
 }
 
-const getAuthConfig = ()=>{
-    //return auth headers
-    return {
-        x:1
-    }
-}
-
-export default { env, urls, getAuthConfig };
+export default { env, urls };

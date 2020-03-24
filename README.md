@@ -23,5 +23,5 @@ Follow these steps
 
 # Thanks to Contributors
 - [@yedhukrishnan](https://github.com/yedhukrishnan)
-    - For Malayam Translation
+    - For Malayalam Translation [#1](https://github.com/rajchandra3/fight-corona/pull/1)
 
