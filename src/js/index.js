@@ -11,7 +11,6 @@ Translate.set_langauge_options(); //sets values in choose language
 
 const refresh_stats=()=>{
     $('.toast').toast('show');
-    Share.update_shared_stats();
     Country.getIndianStats();
     Country.getStatus();
     Gb.getStatus();
@@ -19,6 +18,7 @@ const refresh_stats=()=>{
     Gb.getTopN();
 }
 window.onload=()=>{
+    Share.update_shared_stats();
     refresh_stats();
 }
 document.querySelector('.refresh_stats').addEventListener('click',refresh_stats);
