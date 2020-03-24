@@ -7,7 +7,8 @@ import v from './ui/translation/variables.js';
 import Share from '../js/requests/share.js';
 
 Translate.set_langauge_options(); //sets values in choose language 
-!Store.getItem('default_language')?Store.setItem('default_language',document.getElementById('choose-language').value):Translate.translate_ui();
+!Store.getItem('default_language')?Store.setItem('default_language',document.getElementById('choose-language').value):null;
+Translate.translate_ui();
 
 const refresh_stats=()=>{
     $('.toast').toast('show');
