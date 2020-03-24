@@ -26,7 +26,7 @@ const getGlobalTopN = async()=>{
 
 //Country Statistics API
 const getCountryStatus = async()=>{
-    let response = await fetch(`${Config.urls.free_api}?countryTotal=US`);
+    let response = await fetch(`${Config.urls.free_api}?countryTotal=IN`);
     if (response.ok) { // if HTTP-status is 200-299
         // get the response body (the method explained below)
         let json = await response.json();
