@@ -10,7 +10,7 @@
 ## How to add a new language 
     
 Follow these steps
-- Open `/src/js/ui/translation/variables.js`, edit each variable with equivalents in your langauge
+- In `/src/js/ui/translation/variables.js`, edit each variable with equivalents in your langauge
 - That's it, make a PR
 
 # Sources

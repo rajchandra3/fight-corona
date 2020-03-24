@@ -45,7 +45,7 @@ const translate_ui = ()=>   {
     document.querySelector('.translate-country-status-total-recovered').innerHTML=v.COUNTRY_STATUS_TOTAL_RECOVERED[language];
     document.querySelector('.translate-country-status-total-unresolved').innerHTML=v.COUNTRY_STATUS_TOTAL_UNRESOLVED[language];
     // document.querySelector('.translate-country-timeline-headline').innerHTML=v.COUNTRY_TIMELINE_HEADLINE[language];
-    document.querySelector('.translate-gov-link-container-text').innerHTML=v.GOV_LINK_TEXT[language];
+    // document.querySelector('.translate-gov-link-container-text').innerHTML=v.GOV_LINK_TEXT[language];
     document.querySelector('.translate-country').innerHTML=v.COUNTRY[language];
     document.querySelector('.translate-total-cases').innerHTML=v.TOTAL_CASES[language];
     document.querySelector('.translate-total-cases-today').innerHTML=v.TOTAL_CASES_TODAY[language];
@@ -53,7 +53,7 @@ const translate_ui = ()=>   {
     // document.querySelector('.translate-take-care-stay-safe').innerHTML=v.TAKE_CARE_STAY_SAFE[language];
     // document.querySelector('.translate-github-cta-text').innerHTML=v.GITHUB_CTA_TEXT[language];
     document.querySelector('.translate-share-cta-text').innerHTML=v.SHARE_CTA_TEXT[language];
-    document.querySelector('.translate-does-donts-poster').setAttribute('src',`./src/documents/prevention_measures/${["ENGLISH","HINDI"].includes(language)?language.toLowerCase():"english"}_dos_donts.png`)
+    // document.querySelector('.translate-does-donts-poster').setAttribute('src',`./src/documents/prevention_measures/${["ENGLISH","HINDI"].includes(language)?language.toLowerCase():"english"}_dos_donts.png`)
     // document.querySelector('.translate-').innerHTML=;
     country_ui.getTimeline();
     //update language value incase of reload
