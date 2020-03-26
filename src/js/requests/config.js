@@ -8,6 +8,8 @@ const urls={
     free_api:`https://thevirustracker.com/free-api`,
     ninja_api:`https://corona.lmao.ninja`,
     rootnet_api:`https://api.rootnet.in/covid19-in`,
+    patient_api: 'https://api.rootnet.in/covid19-in/unofficial/covid19india.org',
+
     app_url:`${env==="production"?'https://www.rajchandra.me':'http://localhost:8060'}`
 }
 

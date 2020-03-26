@@ -73,4 +73,17 @@ const getIndianRegionalData = async()=>{
     }
 }
 
-export default { getGlobalStatus, getGlobalTimeline, getGlobalTopN, getCountryStatus, getCountryTimeline, getIndianRegionalData };
+//Patient API
+const getPatient = async()=>{
+    let response = await fetch(`${Config.urls.patient_api}`);
+    if (response.ok) { 
+        // if HTTP-status is 200-299
+        // get the response body (the method explained below)
+        let json = await response.json();
+        return json.data.rawPatientData;
+    } else {
+        alert("HTTP-Error: " + response.status);
+    }
+}
+
+export default { getGlobalStatus, getGlobalTimeline, getGlobalTopN, getCountryStatus, getCountryTimeline, getIndianRegionalData, getPatient };
