@@ -37,8 +37,10 @@ a:hover{
     font-size: 1.5rem;
 }
 .content-container{
-    margin: 2rem;
-    padding: 3rem;
+    width: 14rem;
+    height: 14rem;
+    margin: 1rem;
+    padding: 2rem;
     text-align: center;
     display: inline-block;
     background-color: #fff;
@@ -71,8 +73,11 @@ a:hover{
 .content-container:hover::after {
     opacity: 1;
 }
+.emoji-small{
+    font-size: 40px;
+}
 .text-large{
-    font-size: 48px;
+    font-size: 32px;
     font-weight: 900;
     padding-right: 0.5rem;
     font-family: monospace;
