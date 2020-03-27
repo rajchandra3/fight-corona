@@ -108,4 +108,63 @@ const getIndianStats = ()=>{
     })
 }
 
-export default {getStatus, getTimeline, getIndianStats}
+const getPatientStatus = ()=>{
+    let promise = Request.getPatient();
+    promise.then((data)=>{
+        data=data.rawPatientData;
+        var nPatients=20;
+        var tr;
+        for (var i = data.length-1; i > data.length-1-data; i--) {
+            //Slide Div
+            var mySlideDiv = document.createElement("div");
+            mySlideDiv.setAttribute('class', 'mySlide');
+            //Slide number
+            var numb = document.createElement("div");
+            numb.setAttribute('class', 'numbertext');
+            numb.innerHTML = i + 1 + " / " + data.length;
+            //Caption
+            var cap = document.createElement("div");
+            cap.setAttribute('class', 'captiontext');
+            cap.innerHTML = toTitleCase(data[i].notes);
+            //Append to mySlide div
+            document.getElementById("container").appendChild(mySlideDiv);
+            mySlideDiv.appendChild(numb);
+            mySlideDiv.appendChild(img);
+            mySlideDiv.appendChild(cap);
+        }
+        showSlides(slideIndex);
+        var slideIndex = 1;
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName('mySlide');
+            console.log(slides.length);
+            var dots = document.getElementsByClassName('dot');
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+    });
+}
+
+
+export default { getStatus, getTimeline, getIndianStats,getPatientStatus }

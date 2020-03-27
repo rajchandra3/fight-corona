@@ -80,7 +80,7 @@ const getPatient = async()=>{
         // if HTTP-status is 200-299
         // get the response body (the method explained below)
         let json = await response.json();
-        return json.data.rawPatientData;
+        return json.data;
     } else {
         alert("HTTP-Error: " + response.status);
     }
