@@ -78,6 +78,42 @@ const getTimeline = ()=>{
     })
 }
 
+const getPatientStatus = () =>{
+    let promise = Request.getPatient();
+    promise.then((data)=>{
+        data=data.rawPatientData;
+        var nPatients=20;
+        let patientId=data.patietnId;
+        let patientAge=data.ageEstimate;
+        let city = data.city;
+        let state= data.state;
+        let patientNotes = data.notes;
+        let patientSource=data.sources;
+        
+        for (var i = data.length-1; i > data.length-1-nPatients; i--) {
+            $('.card-carousel').html(`
+                <div class="card">
+                    <div class="place">
+                        ${city},${state}
+                    </div>
+                    <img src="./src/images/patient.svg" alt="" class="patient-img">
+
+                    <div class="patientId">
+                        ${patientId}
+                    </div>
+                    <div class="age">
+                        ${patientAge}
+                    </div>
+                    <div class="notes">
+                        ${patientNotes}
+                    </div>
+                    <a href="${patientSource}" class="patient-source">Source</a>
+            </div>
+            `);
+        }
+    })
+}
+
 const getIndianStats = ()=>{
     //using rootnet api
     let promise = Request.getIndianRegionalData();
@@ -104,45 +140,6 @@ const getIndianStats = ()=>{
                         </tr>`);
                 }
             }
-        }
-    })
-}
-
-const getPatientStatus = ()=>{
-    let promise = Request.getPatient();
-    promise.then((data)=>{
-        data=data.rawPatientData;
-        var nPatients=20;
-        let patientId=data.patietnId;
-        let patientAge=data.ageEstimate;
-        let city = data.city;
-        let state= data.state;
-        let patientNotes = data.notes;
-        let patientSource=data.sources;
-
-        const container = document.querySelector(".card-carousel");
-        
-        for (var i = data.length-1; i > data.length-1-nPatients; i--) {
-            
-            $('.container').find('.card-carousel').append(`
-                <div class="card">
-                <div class="place">
-                    ${city},${state}
-                </div>
-                <img src="./src/images/patient.svg" alt="" class="patient-img">
-
-                <div class="patientId">
-                    ${patientId}
-                </div>
-                <div class="age">
-                    ${patientAge}
-                </div>
-                <div class="notes">
-                    ${patientNotes}
-                </div>
-                <a href="${patientSource}" class="patient-source">Source</a>
-            </div>
-            `);
         }
     })
 }
