@@ -113,9 +113,32 @@ const getPatientStatus = ()=>{
     promise.then((data)=>{
         data=data.rawPatientData;
         var nPatients=20;
-        var tr;
-        for (var i = data.length-1; i > data.length-1-data; i--) {
-            
+        let patientId=data.patietnId;
+        let patientAge=data.ageEstimate;
+        let city = data.city;
+        let state= data.state;
+        let patientNotes = data.notes;
+        let patientSource=data.sources;
+
+        for (var i = data.length-1; i > data.length-1-nPatients; i--) {
+            $('.container').find('.card-carousel').append(`
+            <div class="card">
+            <div class="place">
+                ${city},${state}
+            </div>
+            <img src="./src/images/patient.svg" alt="" class="patient-img">
+
+            <div class="patientId">
+                ${patientId}
+            </div>
+            <div class="age">
+                ${patientAge}
+            </div>
+            <div class="notes">
+                ${patientNotes}
+            </div>
+            <a href="${patientSource}" class="patient-source">Source</a>
+        </div>`);
         }
     });
 }
