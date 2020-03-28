@@ -51,7 +51,8 @@ if (navigator.share) {
     document.querySelector('.share-btn-container').style.display='none';
 }
 
-// carousel
+//patient-corousel
+
 const cardsContainer = document.querySelector(".card-carousel");
 const cardsController = document.querySelector(".card-carousel + .card-controller")
 
@@ -139,7 +140,6 @@ class DraggingEvent {
     this.event(distanceInit)
   }
 }
-
 
 class CardCarousel extends DraggingEvent {
   constructor(container, controller = undefined) {
