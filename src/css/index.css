@@ -76,6 +76,9 @@ a:hover{
 .emoji-small{
     font-size: 40px;
 }
+.highcharts-credits{
+    display: none;
+}
 .text-large{
     font-size: 32px;
     font-weight: 900;
