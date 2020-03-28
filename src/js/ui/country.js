@@ -120,11 +120,11 @@ const getPatientStatus = ()=>{
         let patientNotes = data.notes;
         let patientSource=data.sources;
 
-        const cardsContainer = document.querySelector(".card-carousel");
+        const container = document.querySelector(".card-carousel");
         
         for (var i = data.length-1; i > data.length-1-nPatients; i--) {
             
-            $('.cardsContainer').find('.card-carousel').append(`
+            $('.container').find('.card-carousel').append(`
                 <div class="card">
                 <div class="place">
                     ${city},${state}
