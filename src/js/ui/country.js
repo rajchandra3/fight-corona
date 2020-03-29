@@ -109,38 +109,32 @@ const getIndianStats = ()=>{
 }
 
 const getPatientStatus = ()=>{
+    $('.card-carousel .card').remove();
     let promise = Request.getPatient();
     promise.then((data)=>{
         data=data.rawPatientData;
-        var nPatients=20;
-        let patientId=data.patietnId;
-        let patientAge=data.ageEstimate;
-        let city = data.city;
-        let state= data.state;
-        let patientNotes = data.notes;
-        let patientSource=data.sources;
-
+        let patientCount=data.length;
         const container = document.querySelector(".card-carousel");
         
-        for (var i = data.length-1; i > data.length-1-nPatients; i--) {
-            
+        for (let counter in data) {
+            let patient=data[counter];
             $('.container').find('.card-carousel').append(`
-                <div class="card">
+                <div class="card" id="${counter+1}">
                 <div class="place">
-                    ${city},${state}
+                    ${patient.district || ''} ${patient.city && patient.district?', ':''} ${patient.city? patient.city:''}
                 </div>
                 <img src="./src/images/patient.svg" alt="" class="patient-img">
 
                 <div class="patientId">
-                    ${patientId}
+                    id: ${patient.patientId}
                 </div>
                 <div class="age">
-                    ${patientAge}
+                    age:${patient.geEstimate || '-'}
                 </div>
                 <div class="notes">
-                    ${patientNotes}
+                    notes: ${patient.notes || ''}
                 </div>
-                <a href="${patientSource}" class="patient-source">Source</a>
+                <a href="${patient.sources[0]}" target="_blank" class="patient-source">Source</a>
             </div>
             `);
         }
