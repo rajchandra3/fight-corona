@@ -60,6 +60,8 @@
 
     <!-- import css -->
     <link rel="stylesheet" href="./src/css/index.css">
+    <link rel="stylesheet" href="./src/css/timeline.css">
+    <link rel="stylesheet" href="./src/css/carousel.css">
     <link rel='stylesheet' media='screen and (min-width: 0px) and (max-width: 576px)' href='./src/css/mobile.css' />
     <!-- <link rel='stylesheet' media='screen and (min-width: 577px)' href='/stylesheets/css/large.css' /> -->
 
@@ -137,13 +139,13 @@
                             <a class="nav-link translate-iss" href="#iss">Indian States Summary<span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link translate-it" href="#it">Indian Timeline</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link translate-is" href="#is">Indian Summary</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link translate-gs " href="#gs">Global Summary</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link translate-it" href="#it">Indian Timeline</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link translate-gtac " href="#gtac">Global Top Infected Countries</a>
@@ -151,9 +153,12 @@
                         <li class="nav-item">
                             <a class="nav-link translate-gg" href="#gg">Government Guidelines</a>
                         </li>
-                        <!-- <li class="nav-item">
-                            <a class="nav-link translate-st" href="#st">Share Target</a>
-                        </li> -->
+                        <li class="nav-item">
+                            <a class="nav-link translate-news" href="#news-section">News</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link translate-donate" href="#ds">Donate</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link translate-ss" href="#ss">Say Something!</a>
                         </li>
@@ -199,6 +204,17 @@
                 </table>
             </div>
 
+            <!-- Indian timeline -->
+            <div class="col-lg-12 header bg-clouds" id="it"><span class="translate-it">देश भर में महामारी का दैनिक घटनाक्रम </span>&nbsp;<span> 🇮🇳
+            </span></div>
+            <div class="row col-lg-12 country-timeline-container bg-clouds no-margin no-padding">
+                <figure class="col-lg-12 highcharts-figure">
+                    <div id="country-timeline"></div>
+                    <p class="highcharts-description country-timeline-description text-center pt-2 translate-country-timeline-description">
+                    </p>
+                </figure>
+            </div>
+            
             <!-- Indian summary -->
             <div class="col-lg-12 header bg-turquoise text-white" id="is"><span class="translate-is"> </span>&nbsp;<span>🇮🇳</span></div>
             <div class="row col-lg-12 country-status-container bg-turquoise pb-4">
@@ -295,17 +311,6 @@
 
             </div> -->
 
-            <!-- Indian timeline -->
-            <div class="col-lg-12 header bg-clouds" id="it"><span class="translate-it">देश भर में महामारी का दैनिक घटनाक्रम </span>&nbsp;<span> 🇮🇳
-            </span></div>
-            <div class="row col-lg-12 country-timeline-container bg-clouds no-margin no-padding">
-                <figure class="col-lg-12 highcharts-figure">
-                    <div id="country-timeline"></div>
-                    <p class="highcharts-description country-timeline-description text-center pt-2 translate-country-timeline-description">
-                    </p>
-                </figure>
-            </div>
-
 
             <!-- Global top infected contries -->
             <div class="col-lg-12 header bg-clouds " id="gtac"><span class="translate-gtac"> </span></div>
@@ -383,6 +388,43 @@
                 </a>
             </div> -->
 
+            <!-- donate container -->
+            <div class="col-lg-12 bg-clouds header" id="ds"><span class="translate-donate">Donate</span></div>
+            <div class="col-lg-12 text-left">
+                <div class="col-lg-12 p-2">
+                    <p>Citizens and organisations can go to the website pmindia.gov.in and donate to PM CARES Fund using following details:</p>
+                    <ul>
+                        <li class="no-decore">Name of the Account: PM CARES</li>
+                        <li class="no-decore">Account Number: 2121PM20202 </li>
+                        <li class="no-decore">IFSC Code: SBIN0000691</li>
+                        <li class="no-decore">SWIFT Code: SBININBB104</li>
+                        <li class="no-decore">Name of Bank & Branch : State Bank of India, New Delhi Main Branch</li>
+                        <li class="no-decore">UPI ID: pmcares@sbi</li>
+                    </ul>
+                    <p>
+                        Following modes of payments are available on the website pmindia.gov.in -
+                        <ul>
+                            <li>Debit Cards and Credit Cards</li>
+                            <li>Internet Banking</li>
+                            <li>UPI (BHIM, PhonePe, Amazon Pay, Google Pay, PayTM, Mobikwik, etc.)</li>
+                            <li>RTGS/NEFT</li>
+                        </ul>
+                        <span class="text-center">Donations to this fund will be exempted from income tax under section 80(G).</span>
+                    </p>
+                </div>
+            </div>
+            
+            <!-- news container -->
+            <div id="news-section" class="col-lg-12 header bg-clouds" ><span class="translate-news">News</span></div>
+            <div class="col-12">
+                <div id="time-news-line">
+                    <ul class="news-ui">
+                    <!-- news comes here -->
+                    </ul>
+                </div>
+            </div>
+        
+            <!-- who guidelines -->
             <div class="col-lg-12 row who-guidelines-container ">
                 <div class="col-lg-6 symptoms-container no-margin no-padding">
                     <div class="bg-clouds header">Symptoms</div>
@@ -422,7 +464,7 @@
                 </div>
                 <div class="col-lg-12">
                     <p class="text-center"><small> Source - <a href="https://www.who.int/health-topics/coronavirus#tab=tab_3" target="_blank">WHO</a></small></p>
-                </div>
+             </div>
             </div>
 
             <!-- patient info -->
@@ -531,6 +573,6 @@
 
     <script type="module" src="./src/js/index.js"></script>
     <script type="module" src="./src/js/ui/translation/translate.js"></script>
-    <script src="./src/js/ui/components/patient_card.js"></script>
+    <!-- <script src="./src/js/ui/components/patient_card.js"></script> -->
 </body>
 </html>

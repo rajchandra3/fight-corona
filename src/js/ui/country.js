@@ -114,12 +114,13 @@ const getPatientStatus = ()=>{
     promise.then((data)=>{
         data=data.rawPatientData;
         let patientCount=data.length;
+        let no_of_paients_to_show=20;
         const container = document.querySelector(".card-carousel");
         
-        for (let counter in data) {
-            let patient=data[counter];
+        for (let i=patientCount-1;i>patientCount-no_of_paients_to_show;i--) {
+            let patient=data[i];
             $('.container').find('.card-carousel').append(`
-                <div class="card" id="${counter+1}">
+                <div class="card" id="${patientCount-i}">
                 <div class="place">
                     ${patient.district || ''} ${patient.city && patient.district?', ':''} ${patient.city? patient.city:''}
                 </div>
@@ -134,9 +135,25 @@ const getPatientStatus = ()=>{
                 <div class="notes">
                     notes: ${patient.notes || ''}
                 </div>
-                <a href="${patient.sources[0]}" target="_blank" class="patient-source">Source</a>
+                <a href="${patient.sources && patient.sources[0]}" target="_blank" class="patient-source">Source</a>
             </div>
             `);
+            if(i+no_of_paients_to_show === patientCount+1){
+                var newScript = document.createElement("script");
+                newScript.type = "text/javascript";
+                newScript.setAttribute("async", "true");
+                newScript.setAttribute("src", './src/js/ui/components/patient_card.js');
+                
+                if(newScript.readyState) {
+                    newScript.onreadystatechange = function() {
+                        if(/loaded|complete/.test(newScript.readyState)) console.log('loaded script');
+                    }
+                } else {
+                    newScript.addEventListener("load",()=>console.log('added event listener to script'));
+                }
+                
+                document.documentElement.firstChild.appendChild(newScript);
+            }
         }
     })
 }

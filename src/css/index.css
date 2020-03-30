@@ -76,6 +76,9 @@ a:hover{
 .emoji-small{
     font-size: 40px;
 }
+.highcharts-credits{
+    display: none;
+}
 .text-large{
     font-size: 32px;
     font-weight: 900;
@@ -124,110 +127,3 @@ a:hover{
     background-color: #2ecc71;
     color: #ecf0f1;
 }
-
-/* carousel */
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
-  html {
-    font-family: system-ui;
-    background: #3d76d9;
-  }
-  
-  .visuallyhidden {
-    position: absolute;
-    z-index: -1;
-    right: 0;
-    opacity: 0;
-    
-  }
-  
-  h1 {
-    color: white;
-    text-align: center;
-    margin-top: 1em;
-  }
-  
-  .container {
-    overflow: hidden;
-    padding: 20px;
-    margin-top: 2em;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .card-carousel {
-    --card-width: 80%;
-    --card-max-width: 280px;
-    --card-height: 350px;
-    --carousel-min-width: 600px;
-    z-index: 1;
-    position: relative;
-    margin: 0 auto;
-    width: 100%;
-    height: var(--card-height);
-    min-width: var(--carousel-min-width);
-    transition: filter .3s ease;
-  }
-  
-  @media screen and (max-width: 640px) {
-    .card-carousel {
-      margin-left: calc((100vw - var(--carousel-min-width) - 40px) / 2)
-    }
-  }
-  
-  .card-carousel.smooth-return {
-    transition: all .2s ease;
-  }
-  
-  .card-carousel .card {
-    background: whitesmoke;
-    width: var(--card-width);
-    max-width: var(--card-max-width);
-    text-align: center;
-    padding: 1em;
-    min-width: 250px;
-    height: var(--card-height);
-    position: absolute;
-    margin: 0 auto;
-    color: rgba(0,0,0,.5);
-    transition: inherit;
-    -webkit-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.3);
-    -moz-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.3);
-    box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.3);
-    border-radius: 1em;
-    filter: brightness(.9);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .card.highlight {
-    filter: brightness(1)
-  }
-
-  .card{
-      display: flex;
-      justify-content: space-evenly;
-    }
-  .place{
-      font-weight: 900;
-      padding: 1rem 0 1rem 0;
-  }
-  .patient-img{
-      height: 4rem;
-      width: 4rem;
-      margin: 1rem 0 1rem 0;
-
-  }
-  .notes{
-      display: flex;
-      flex-wrap:wrap ;
-      font-weight: 700;
-      margin:0.4rem;
-  }

@@ -73,7 +73,8 @@ const translate_ui = ()=>   {
         document.querySelectorAll('.translate-it'),
         document.querySelectorAll('.translate-gtac'),
         document.querySelectorAll('.translate-gg'),
-        // document.querySelectorAll('.translate-st'),
+        document.querySelectorAll('.translate-news'),
+        document.querySelectorAll('.translate-donate'),
         document.querySelectorAll('.translate-ss')
     ];
     for(let nodes of arr){
