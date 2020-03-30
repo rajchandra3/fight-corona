@@ -529,6 +529,16 @@ const variables = {
         PUNJABI:"ਖ਼ਬਰਾਂ",
         MARATHI:"",
         MALAYALAM: "വാർത്ത"
+    },
+    donate:{
+        HINDI:"डोनेट करें",
+        ENGLISH:"Donate",
+        BENGALI:"দান করা",
+        TAMIL:"நன்கொடை",
+        TELGUE:"దానం",
+        PUNJABI:"ਦਾਨ ਕਰੋ",
+        MARATHI:"",
+        MALAYALAM: "സംഭാവനചെയ്യുക"
     }
 }
 
