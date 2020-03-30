@@ -15,6 +15,7 @@ const urlsToCache = [
   "/src/js/ui/translation/translate.js",
   "/src/js/ui/translation/variables.js",
   "/src/js/ui/country.js",
+  "/src/js/ui/news.js",
   "/src/js/ui/global.js",
   "/src/js/index.js"
 ]

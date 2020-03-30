@@ -72,5 +72,21 @@ const getIndianRegionalData = async()=>{
         alert("HTTP-Error: " + response.status);
     }
 }
+//News Data
 
-export default { getGlobalStatus, getGlobalTimeline, getGlobalTopN, getCountryStatus, getCountryTimeline, getIndianRegionalData };
+const getNews=async()=>{
+    let response=await fetch(`${Config.urls.app_backend_api}/getNews?count=15`);
+    if(response.ok)
+    {
+       // console.log(response);
+        let json=await response.json();
+        // console.log(json.payload);
+        return json.payload;
+    }
+    else
+    {
+        alert("HTTP-Error: " + response.status);
+    }
+}
+
+export default { getGlobalStatus, getGlobalTimeline, getGlobalTopN, getCountryStatus, getCountryTimeline, getIndianRegionalData,getNews };

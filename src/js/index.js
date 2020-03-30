@@ -5,6 +5,7 @@ import Translate from './ui/translation/translate.js';
 import Config from './requests/config.js';
 import v from './ui/translation/variables.js';
 import Share from '../js/requests/share.js';
+import Newsd from './ui/news.js';
 
 Translate.set_langauge_options(); //sets values in choose language 
 !Store.getItem('default_language')?Store.setItem('default_language',document.getElementById('choose-language').value):null;
@@ -17,6 +18,7 @@ const refresh_stats=()=>{
     Gb.getStatus();
     Country.getTimeline();
     Gb.getTopN();
+    Newsd.getNewsData();
 }
 window.onload=()=>{
     Share.update_shared_stats();
