@@ -519,6 +519,16 @@ const variables = {
         PUNJABI:"ਕੁੱਝ ਕਹੋ!",
         MARATHI:"",
         MALAYALAM: "എന്തെങ്കിലും പറയുക "
+    },
+    news:{
+        HINDI:"समाचार",
+        ENGLISH:"News",
+        BENGALI:"খবর",
+        TAMIL:"செய்தி",
+        TELGUE:"వార్తలు",
+        PUNJABI:"ਖ਼ਬਰਾਂ",
+        MARATHI:"",
+        MALAYALAM: "വാർത്ത"
     }
 }
 

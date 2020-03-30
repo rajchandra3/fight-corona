@@ -75,7 +75,7 @@ const getIndianRegionalData = async()=>{
 //News Data
 
 const getNews=async()=>{
-    let response=await fetch(`${Config.urls.news_api}?count=10`);
+    let response=await fetch(`${Config.urls.app_backend_api}/getNews?count=15`);
     if(response.ok)
     {
        // console.log(response);

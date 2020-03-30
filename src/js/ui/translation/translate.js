@@ -73,12 +73,13 @@ const translate_ui = ()=>   {
         document.querySelectorAll('.translate-it'),
         document.querySelectorAll('.translate-gtac'),
         document.querySelectorAll('.translate-gg'),
-        // document.querySelectorAll('.translate-st'),
+        document.querySelectorAll('.translate-news'),
         document.querySelectorAll('.translate-ss')
     ];
     for(let nodes of arr){
         let type = nodes[1].classList[0].split('-')[1];
         for(let node of nodes){
+            console.log(node);
             node.textContent=v[type][language];
         }
     }
