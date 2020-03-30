@@ -79,7 +79,6 @@ const translate_ui = ()=>   {
     for(let nodes of arr){
         let type = nodes[1].classList[0].split('-')[1];
         for(let node of nodes){
-            console.log(node);
             node.textContent=v[type][language];
         }
     }
