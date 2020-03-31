@@ -90,9 +90,9 @@
     }
   .place{
       font-weight: 900;
-      padding: 1rem 0 1rem 0;
+      padding: 1rem 0 0.3rem 0;
   }
-  .patient-img{
+  #patient-img{
       height: 4rem;
       width: 4rem;
       margin: 1rem 0 1rem 0;
@@ -103,4 +103,15 @@
       flex-wrap:wrap ;
       font-weight: 700;
       margin:0.4rem;
+  }
+
+  .gender{
+    text-transform: capitalize;
+  }
+
+
+  @media (max-width: 560px){
+  .card-carousel{
+    margin-left: 1rem !important ;
+  }
   }

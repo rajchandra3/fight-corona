@@ -124,18 +124,22 @@ const getPatientStatus = ()=>{
                 <div class="place">
                     ${patient.district || ''} ${patient.city && patient.district?', ':''} ${patient.city? patient.city:''}
                 </div>
-                <img src="./src/images/patient.svg" alt="" class="patient-img">
-
-                <div class="patientId">
-                    id: ${patient.patientId}
-                </div>
+                <img src="${(patient.ageEstimate!="")?(patient.ageEstimate>60)?(patient.gender=="male"?'src/images/old-man.png':'src/images/old-woman.png'):((patient.ageEstimate<10)?'src/images/kid.png':(patient.gender=="male"?'src/images/man.png':'src/images/woman.png')):'src/images/patient.svg'}" alt="" id="patient-img">
                 <div class="age">
-                    age:${patient.geEstimate || '-'}
+                    Age: ${patient.ageEstimate}
+                </div>
+                <div class="patientId">
+                    ID: ${patient.patientId}
+                </div>
+                <div>
+                    Reported on: ${patient.reportedOn}
+                </div>
+                <div>
+                    ${patient.status}
                 </div>
                 <div class="notes">
-                    notes: ${patient.notes || ''}
+                    ${patient.notes || ''}
                 </div>
-                <a href="${patient.sources && patient.sources[0]}" target="_blank" class="patient-source">Source</a>
             </div>
             `);
             if(i+no_of_paients_to_show === patientCount+1){
@@ -154,9 +158,14 @@ const getPatientStatus = ()=>{
                 
                 document.documentElement.firstChild.appendChild(newScript);
             }
+            
         }
     })
 }
+
+// (patient.gender==male?'src/images/old-man.png':'src/images/old-woman.png')
+{/* <a href="${patient.sources && patient.sources[0]}" target="_blank" class="patient-source">Source</a> */}
+
 
 
 export default { getStatus, getTimeline, getIndianStats,getPatientStatus }
