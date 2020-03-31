@@ -121,10 +121,13 @@ const getPatientStatus = ()=>{
             let patient=data[i];
             $('.container').find('.card-carousel').append(`
                 <div class="card" id="${patientCount-i}">
+                <div class="notes">
+                    ${patient.notes || ''}
+                </div>
+                <img src="${(patient.ageEstimate!="")?(patient.ageEstimate>60)?(patient.gender=="male"?'src/images/old-man.png':'src/images/old-woman.png'):((patient.ageEstimate<10)?'src/images/kid.png':(patient.gender=="male"?'src/images/man.png':'src/images/woman.png')):'src/images/patient.svg'}" alt="" id="patient-img">
                 <div class="place">
                     ${patient.district || ''} ${patient.city && patient.district?', ':''} ${patient.city? patient.city:''}
                 </div>
-                <img src="${(patient.ageEstimate!="")?(patient.ageEstimate>60)?(patient.gender=="male"?'src/images/old-man.png':'src/images/old-woman.png'):((patient.ageEstimate<10)?'src/images/kid.png':(patient.gender=="male"?'src/images/man.png':'src/images/woman.png')):'src/images/patient.svg'}" alt="" id="patient-img">
                 <div class="age">
                     Age: ${patient.ageEstimate}
                 </div>
@@ -136,10 +139,7 @@ const getPatientStatus = ()=>{
                 </div>
                 <div>
                     ${patient.status}
-                </div>
-                <div class="notes">
-                    ${patient.notes || ''}
-                </div>
+                </div>    
             </div>
             `);
             if(i+no_of_paients_to_show === patientCount+1){
