@@ -6,23 +6,11 @@
     padding: 0;
   }
   
-  html {
-    font-family: system-ui;
-    background: #3d76d9;
-  }
-  
   .visuallyhidden {
     position: absolute;
     z-index: -1;
     right: 0;
     opacity: 0;
-    
-  }
-  
-  h1 {
-    color: white;
-    text-align: center;
-    margin-top: 1em;
   }
   
   .container {
@@ -85,28 +73,41 @@
   }
 
   .card{
-      display: flex;
-      justify-content: space-evenly;
-    }
-  .place{
-      font-weight: 900;
-      padding: 1rem 0 0.3rem 0;
+    padding: 2rem 1rem 2rem 1rem !important;
   }
-  #patient-img{
-      height: 4rem;
-      width: 4rem;
-      margin: 1rem 0 1rem 0;
+  .card-top-text{
+    margin:1.5rem 0 0 0 ;
+  }
 
+  #patient-img{
+      height:64px;
+      width: 64px;
+      margin: 1rem 0 1rem 0;
   }
-  .notes{
-      display: flex;
-      flex-wrap:wrap ;
-      font-weight: 700;
-      margin:0.4rem;
+
+  .card-bottom{
+    margin: 1rem -1rem 0 -1rem !important;
   }
 
   .gender{
     text-transform: capitalize;
+  }
+
+  .card-img{
+    height: 20px;
+    width: 20px;
+  }
+  .card-img-info{
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  .card-bottom-text{
+    display: inline;
+  }
+
+  .hide{
+    display: none;
   }
 
 

@@ -121,25 +121,33 @@ const getPatientStatus = ()=>{
             let patient=data[i];
             $('.container').find('.card-carousel').append(`
                 <div class="card" id="${patientCount-i}">
-                <div class="notes">
-                    ${patient.notes || ''}
+                <div class="card-top row">
+                    <img src="${(patient.ageEstimate!="")?(patient.ageEstimate>60)?(patient.gender=="male"?'src/images/old-man.png':'src/images/old-woman.png'):((patient.ageEstimate<10)?'src/images/kid.png':(patient.gender=="male"?'src/images/man.png':'src/images/woman.png')):(patient.gender=="male"?'src/images/man.png':'src/images/woman.png')}" alt="" id="patient-img">
+                    <div class="card-top-text">
+                        <div class="patientId col" >
+                            Patient ID: ${patient.patientId}
+                        </div>
+                        <div class="age gender col">
+                            ${(patient.ageEstimate!="")?patient.ageEstimate+",":""} ${patient.gender || ""}
+                        </div>
+                    </div>
                 </div>
-                <img src="${(patient.ageEstimate!="")?(patient.ageEstimate>60)?(patient.gender=="male"?'src/images/old-man.png':'src/images/old-woman.png'):((patient.ageEstimate<10)?'src/images/kid.png':(patient.gender=="male"?'src/images/man.png':'src/images/woman.png')):'src/images/patient.svg'}" alt="" id="patient-img">
-                <div class="place">
-                    ${patient.district || ''} ${patient.city && patient.district?', ':''} ${patient.city? patient.city:''}
+                <div class="card-bottom row">
+                    <div class="card-img-col col-sm-3">
+                        <p><img src="src/images/reportedOn.svg" class="card-img"></p>
+                        <p><img src="src/images/status.svg" class="card-img"></p>
+                        <p><img src="src/images/notes.svg" class="card-img"></p>
+                    </div>
+                    <div class="col-sm-9 card-bottom-text">
+                        <p class="">Reported on ${patient.reportedOn.slice(0,5) ||''}</p>
+                        <p class="">${patient.status || ''}</p>
+                        <p class="">${patient.notes || ''}</p>
+                    </div>
+                <div class="row" style="margin:0 0 0 0.7rem !important;">
+                    <p><img src="src/images/place.svg" class="card-img col"></p>
+                    <p class="col" style="margin:0 0 0 1.8rem !important;">${patient.district || ''} ${patient.city && patient.district?', ':''} ${patient.city? patient.city:''}</p>
                 </div>
-                <div class="age">
-                    Age: ${patient.ageEstimate}
                 </div>
-                <div class="patientId">
-                    ID: ${patient.patientId}
-                </div>
-                <div>
-                    Reported on: ${patient.reportedOn}
-                </div>
-                <div>
-                    ${patient.status}
-                </div>    
             </div>
             `);
             if(i+no_of_paients_to_show === patientCount+1){
