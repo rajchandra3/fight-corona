@@ -139,15 +139,15 @@ const getPatientStatus = ()=>{
                     </div>
                     <div class="card-row">
                         <div class="card-img-div"><img src="src/images/status.svg" class="card-img"></div>
-                        <div class="card-text-div">${patient.status || ''}</div>
+                        <div class="card-text-div">${patient.status || 'Status unknown'}</div>
                     </div>
                     <div class="card-row">
                         <div class="card-img-div"><img src="src/images/notes.svg" class="card-img"></div>
-                        <div class="notes card-text-div">${patient.notes || ''}</div>
+                        <div class="notes card-text-div">${patient.notes || 'No additional information provided'}</div>
                     </div>
                     <div class="card-row">
                         <div class="card-img-div"><img src="src/images/place.svg" class="card-img "></div>
-                        <div class="card-text-div">${patient.city || ''}</div>
+                        <div class="card-text-div">${patient.city || 'Place unknown'}</div>
                     </div>
                     </div>
                 </div>
