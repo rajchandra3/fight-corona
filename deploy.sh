@@ -12,7 +12,7 @@ rm -rf ./corona-go
 echo "removed old repo"
 git clone $repo
 echo "cloned repo"
-cp -a ./fight-covid19/. ./corona-go/
+cp -a ./fight-corona/. ./corona-go/
 echo "copied the files to new folder"
 cd ./corona-go
 echo "entered new folder"

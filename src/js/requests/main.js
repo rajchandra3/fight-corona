@@ -89,12 +89,12 @@ const getPatient = async()=>{
 
 //news data
 const getNews=async()=>{
-    let response=await fetch(`${Config.urls.app_backend_api}/getNews?count=15`);
+    let response=await fetch(`${Config.urls.app_backend_api}/news-api/get?count=10`);
     if(response.ok)
     {
        // console.log(response);
         let json=await response.json();
-        // console.log(json.payload);
+        console.log(json.payload);
         return json.payload;
     }
     else
