@@ -24,4 +24,10 @@ Follow these steps
 # Thanks to Contributors
 - [@yedhukrishnan](https://github.com/yedhukrishnan)
     - For Malayalam Translation [#1](https://github.com/rajchandra3/fight-corona/pull/1)
+- [@ravithesun02](https://github.com/ravithesun02)
+    - News section UI
+- [@r-ush](https://github.com/r-ush)
+    - Patient cards UI
+
+
 
