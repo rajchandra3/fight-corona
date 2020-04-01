@@ -74,13 +74,27 @@ const getIndianRegionalData = async()=>{
 }
 //News Data
 
+//Patient API
+const getPatient = async()=>{
+    let response = await fetch(`${Config.urls.rootnet_api}/unofficial/covid19india.org`);
+    if (response.ok) { 
+        // if HTTP-status is 200-299
+        // get the response body (the method explained below)
+        let json = await response.json();
+        return json.data;
+    } else {
+        alert("HTTP-Error: " + response.status);
+    }
+}
+
+//news data
 const getNews=async()=>{
-    let response=await fetch(`${Config.urls.app_backend_api}/news-api/get?count=5`);
+    let response=await fetch(`${Config.urls.app_backend_api}/news-api/get?count=10`);
     if(response.ok)
     {
        // console.log(response);
         let json=await response.json();
-        // console.log(json.payload);
+        console.log(json.payload);
         return json.payload;
     }
     else
@@ -89,4 +103,4 @@ const getNews=async()=>{
     }
 }
 
-export default { getGlobalStatus, getGlobalTimeline, getGlobalTopN, getCountryStatus, getCountryTimeline, getIndianRegionalData,getNews };
+export default { getGlobalStatus, getGlobalTimeline, getGlobalTopN, getCountryStatus, getCountryTimeline, getIndianRegionalData, getNews, getPatient };

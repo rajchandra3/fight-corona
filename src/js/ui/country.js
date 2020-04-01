@@ -108,4 +108,76 @@ const getIndianStats = ()=>{
     })
 }
 
-export default {getStatus, getTimeline, getIndianStats}
+const getPatientStatus = ()=>{
+    $('.card-carousel .card').remove();
+    let promise = Request.getPatient();
+    promise.then((data)=>{
+        data=data.rawPatientData;
+        let patientCount=data.length;
+        let no_of_paients_to_show=20;
+        const container = document.querySelector(".card-carousel");
+        
+        for (let i=patientCount-1;i>patientCount-no_of_paients_to_show;i--) {
+            let patient=data[i];
+            $('.container').find('.card-carousel').append(`
+                <div class="card" id="${patientCount-i}">
+                <div class="card-top row">
+                    <img src="${(patient.ageEstimate!="")?(patient.ageEstimate>60)?(patient.gender=="male"?'src/images/old-man.png':'src/images/old-woman.png'):((patient.ageEstimate<10)?'src/images/kid.png':(patient.gender=="male"?'src/images/man.png':'src/images/woman.png')):(patient.gender=="male"?'src/images/man.png':'src/images/woman.png')}" alt="" id="patient-img">
+                    <div class="card-top-text">
+                        <div class="patientId col" >
+                            Patient ID: ${patient.patientId}
+                        </div>
+                        <div class="age gender col">
+                            ${(patient.ageEstimate!="")?patient.ageEstimate+",":""} ${patient.gender || ""}
+                        </div>
+                    </div>
+                </div>
+                <div class="card-bottom row">
+                    <div class="card-row" >
+                        <div class="card-img-div"><img src="src/images/reportedOn.svg" class="card-img"></div>
+                        <div class="card-text-div">Reported on ${patient.reportedOn.slice(0,5) ||''}</div>
+                    </div>
+                    <div class="card-row">
+                        <div class="card-img-div"><img src="src/images/status.svg" class="card-img"></div>
+                        <div class="card-text-div">${patient.status || 'Status unknown'}</div>
+                    </div>
+                    <div class="card-row">
+                        <div class="card-img-div"><img src="src/images/notes.svg" class="card-img"></div>
+                        <div class="notes card-text-div">${patient.notes || 'No additional information provided'}</div>
+                    </div>
+                    <div class="card-row">
+                        <div class="card-img-div"><img src="src/images/place.svg" class="card-img "></div>
+                        <div class="card-text-div">${patient.city || 'Place unknown'}</div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            `);
+
+            if(i+no_of_paients_to_show === patientCount+1){
+                var newScript = document.createElement("script");
+                newScript.type = "text/javascript";
+                newScript.setAttribute("async", "true");
+                newScript.setAttribute("src", './src/js/ui/components/patient_card.js');
+                
+                if(newScript.readyState) {
+                    newScript.onreadystatechange = function() {
+                        if(/loaded|complete/.test(newScript.readyState)) console.log('loaded script');
+                    }
+                } else {
+                    newScript.addEventListener("load",()=>console.log('added event listener to script'));
+                }
+                
+                document.documentElement.firstChild.appendChild(newScript);
+            }
+            
+        }
+    })
+}
+
+// (patient.gender==male?'src/images/old-man.png':'src/images/old-woman.png')
+{/* <a href="${patient.sources && patient.sources[0]}" target="_blank" class="patient-source">Source</a> */}
+
+
+
+export default { getStatus, getTimeline, getIndianStats,getPatientStatus }

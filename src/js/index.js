@@ -18,6 +18,7 @@ const refresh_stats=()=>{
     Gb.getStatus();
     Country.getTimeline();
     Gb.getTopN();
+    Country.getPatientStatus();
     Newsd.getNewsData();
 }
 window.onload=()=>{
