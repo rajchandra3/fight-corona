@@ -133,20 +133,23 @@ const getPatientStatus = ()=>{
                     </div>
                 </div>
                 <div class="card-bottom row">
-                    <div class="card-img-col col-sm-3">
-                        <p><img src="src/images/reportedOn.svg" class="card-img"></p>
-                        <p><img src="src/images/status.svg" class="card-img"></p>
-                        <p><img src="src/images/notes.svg" class="card-img"></p>
+                    <div class="card-row" >
+                        <div class="card-img-div"><img src="src/images/reportedOn.svg" class="card-img"></div>
+                        <div class="card-text-div">Reported on ${patient.reportedOn.slice(0,5) ||''}</div>
                     </div>
-                    <div class="col-sm-9 card-bottom-text">
-                        <p class="">Reported on ${patient.reportedOn.slice(0,5) ||''}</p>
-                        <p class="">${patient.status || ''}</p>
-                        <p class="">${patient.notes || ''}</p>
+                    <div class="card-row">
+                        <div class="card-img-div"><img src="src/images/status.svg" class="card-img"></div>
+                        <div class="card-text-div">${patient.status || ''}</div>
                     </div>
-                <div class="row" style="margin:0 0 0 0.7rem !important;">
-                    <p><img src="src/images/place.svg" class="card-img col"></p>
-                    <p class="col" style="margin:0 0 0 1.8rem !important;">${patient.district || ''} ${patient.city && patient.district?', ':''} ${patient.city? patient.city:''}</p>
-                </div>
+                    <div class="card-row">
+                        <div class="card-img-div"><img src="src/images/notes.svg" class="card-img"></div>
+                        <div class="notes card-text-div">${patient.notes || ''}</div>
+                    </div>
+                    <div class="card-row">
+                        <div class="card-img-div"><img src="src/images/place.svg" class="card-img "></div>
+                        <div class="card-text-div">${patient.city || ''}</div>
+                    </div>
+                    </div>
                 </div>
             </div>
             `);
