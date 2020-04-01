@@ -74,9 +74,12 @@
 
   .card{
     padding: 2rem 1rem 2rem 1rem !important;
+    color:#121212;
   }
+
   .card-top-text{
-    margin:1.5rem 0 0 0;
+    margin:1rem 0 0 0 !important;
+    text-align: left;
   }
 
   #patient-img{

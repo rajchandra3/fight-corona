@@ -153,6 +153,7 @@ const getPatientStatus = ()=>{
                 </div>
             </div>
             `);
+
             if(i+no_of_paients_to_show === patientCount+1){
                 var newScript = document.createElement("script");
                 newScript.type = "text/javascript";
