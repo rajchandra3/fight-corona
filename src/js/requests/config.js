@@ -4,6 +4,7 @@ const toggler = window.location.hostname === 'fight-corona.rajchandra.me' || win
 const env=toggler?'production':'development';
 
 const urls={
+    covid19India_api:`https://api.covid19india.org/`,
     health_api:`https://health-api.com/api/v1/covid-19`,
     free_api:`https://thevirustracker.com/free-api`,
     ninja_api:`https://corona.lmao.ninja`,

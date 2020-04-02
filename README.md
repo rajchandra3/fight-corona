@@ -9,7 +9,7 @@
 - Worldwide stats
 - World's top infected counties
 - Live News updates
-- Live infected Patient details (last 20)
+- Live infected Patient details (lastest 20)
 
 # Available languages
 - Hindi
