@@ -2,6 +2,8 @@
 - Name: `Coronavirus Awareness Campaign`
 - App Url: [`crona-go.info`](https://corona-go.info)
 
+    ## [Join us on Slack](https://join.slack.com/t/corona-go-app/shared_invite/zt-d761526p-xYZlrXUsGmZ6ec04a2R6JQ)
+
 # Available data
 - Indian stats
 - Indian Statewise stats
