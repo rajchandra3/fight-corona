@@ -1,4 +1,17 @@
-## Available languages
+# APP
+- Name: `Coronavirus Awareness Campaign`
+- App Url: [`crona-go.info`](https://corona-go.info)
+
+# Available data
+- Indian stats
+- Indian Statewise stats
+- Indian time series
+- Worldwide stats
+- World's top infected counties
+- Live News updates
+- Live infected Patient details (last 20)
+
+# Available languages
 - Hindi
 - English
 - Bengali
@@ -7,7 +20,7 @@
 - Telgue
 - Malayalam
 
-## How to add a new language 
+#### How to add a new language 
     
 Follow these steps
 - In `/src/js/ui/translation/variables.js`, edit each variable with equivalents in your langauge
@@ -17,17 +30,21 @@ Follow these steps
 - [Ministry of Health and Family Welfare Goverment of India](https://www.mohfw.gov.in/)
 
 # API credits
-- [https://thevirustracker.com/](https://thevirustracker.com/)
-- [https://lmao.ninja/](https://lmao.ninja/)
+### Indian Datapoints
+- [https://api.covid19india.org/](https://api.covid19india.org/)
 - [https://api.rootnet.in/](https://api.rootnet.in/)
+
+### Worldwide Datapoints
+- [https://thevirustracker.com/](https://thevirustracker.com/)
 
 # Thanks to Contributors
 - [@yedhukrishnan](https://github.com/yedhukrishnan)
-    - For Malayalam Translation [#1](https://github.com/rajchandra3/fight-corona/pull/1)
+    - For Malayalam Translation [See #1](https://github.com/rajchandra3/fight-corona/pull/1)
 - [@ravithesun02](https://github.com/ravithesun02)
-    - News section UI
+    - News section UI [See #9](https://github.com/rajchandra3/fight-corona/pull/9)
 - [@r-ush](https://github.com/r-ush)
-    - Patient cards UI
-
+    - Patient cards UI [See #12](https://github.com/rajchandra3/fight-corona/pull/12)
+- [@rish07](https://github.com/rish07)
+    - For Marathi Translation [See #13](https://github.com/rajchandra3/fight-corona/pull/13)
 
 

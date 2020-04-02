@@ -42,7 +42,6 @@ const getGlobalTimeline = async()=>{
     if (response.ok) { // if HTTP-status is 200-299
         // get the response body (the method explained below)
         let json = await response.json();
-        console.log(json.countrydata);
     } else {
         alert("HTTP-Error: " + response.status);
     }
@@ -94,7 +93,6 @@ const getNews=async()=>{
     {
        // console.log(response);
         let json=await response.json();
-        console.log(json.payload);
         return json.payload;
     }
     else
