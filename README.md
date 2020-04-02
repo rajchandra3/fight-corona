@@ -15,13 +15,14 @@
 - Live infected Patient details (lastest 20)
 
 # Available languages
-- Hindi
-- English
-- Bengali
-- Punjabi
-- Tamil
-- Telgue
-- Malayalam
+- [Hindi](https://corona-go.info?lang=HINDI&medium=github_readme)
+- [English](https://corona-go.info?lang=ENGLISH&medium=github_readme)
+- [Bengali](https://corona-go.info?lang=BENGALI&medium=github_readme)
+- [Punjabi](https://corona-go.info?lang=PUNJABI&medium=github_readme)
+- [Tamil](https://corona-go.info?lang=TAMIL&medium=github_readme)
+- [Telgue](https://corona-go.info?lang=TELGUE&medium=github_readme)
+- [Malayalam](https://corona-go.info?lang=MALAYALAM&medium=github_readme)
+- [Urdu](https://corona-go.info?lang=URDU&medium=github_readme)
 
 #### How to add a new language 
     
@@ -49,5 +50,7 @@ Follow these steps
     - Patient cards UI [See #12](https://github.com/rajchandra3/fight-corona/pull/12)
 - [@rish07](https://github.com/rish07)
     - For Marathi Translation [See #13](https://github.com/rajchandra3/fight-corona/pull/13)
+- [@noob-master147](https://github.com/noob-master147)
+    - For Urdu Translation [See #13](https://github.com/rajchandra3/fight-corona/pull/16)
 
 

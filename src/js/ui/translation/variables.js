@@ -41,7 +41,7 @@ const variables = {
             iso_name: 'ml'
         },
         urdu: {
-            name: 'Urdu',
+            name: 'URDU',
             label: 'اردو',
             iso_name: 'ur'
         }
