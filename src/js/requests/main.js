@@ -3,13 +3,18 @@ import Config from './config.js';
 
 //Global Statistics API
 const getGlobalStatus = async()=>{
-    let response = await fetch(`${Config.urls.free_api}?global=stats`);
-    if (response.ok) { // if HTTP-status is 200-299
-        // get the response body (the method explained below)
-        let json = await response.json();
-        return json.results;
-    } else {
-        alert("HTTP-Error: " + response.status);
+    try{
+        let response = await fetch(`${Config.urls.free_api}?global=stats`);
+        if (response.ok) { // if HTTP-status is 200-299
+            // get the response body (the method explained below)
+            let json = await response.json();
+            return json.results;
+        } else {
+            console.log("HTTP-Error: " + response.status);
+        }
+    }
+    catch{
+        return null;
     }
 }
 
@@ -20,19 +25,19 @@ const getGlobalTopN = async()=>{
         let json = await response.json();
         return json;
     } else {
-        alert("HTTP-Error: " + response.status);
+        console.log("HTTP-Error: " + response.status);
     }
 }
 
 //Country Statistics API
 const getCountryStatus = async()=>{
-    let response = await fetch(`${Config.urls.free_api}?countryTotal=IN`);
+    let response = await fetch(`${Config.urls.covid19India_api}/`);
     if (response.ok) { // if HTTP-status is 200-299
         // get the response body (the method explained below)
         let json = await response.json();
         return json;
     } else {
-        alert("HTTP-Error: " + response.status);
+        console.log("HTTP-Error: " + response.status);
     }
 }
 
@@ -43,7 +48,7 @@ const getGlobalTimeline = async()=>{
         // get the response body (the method explained below)
         let json = await response.json();
     } else {
-        alert("HTTP-Error: " + response.status);
+        console.log("HTTP-Error: " + response.status);
     }
 }
 
@@ -55,7 +60,7 @@ const getCountryTimeline = async()=>{
         let json = await response.json();
         return json.data;
     } else {
-        alert("HTTP-Error: " + response.status);
+        console.log("HTTP-Error: " + response.status);
     }
 }
 
@@ -68,21 +73,21 @@ const getIndianRegionalData = async()=>{
         let json = await response.json();
         return json;
     } else {
-        alert("HTTP-Error: " + response.status);
+        console.log("HTTP-Error: " + response.status);
     }
 }
 //News Data
 
 //Patient API
 const getPatient = async()=>{
-    let response = await fetch(`${Config.urls.rootnet_api}/unofficial/covid19india.org`);
+    let response = await fetch(`${Config.urls.covid19India_api}/raw_data.json`);
     if (response.ok) { 
         // if HTTP-status is 200-299
         // get the response body (the method explained below)
         let json = await response.json();
-        return json.data;
+        return json.raw_data;
     } else {
-        alert("HTTP-Error: " + response.status);
+        console.log("HTTP-Error: " + response.status);
     }
 }
 
@@ -97,8 +102,34 @@ const getNews=async()=>{
     }
     else
     {
-        alert("HTTP-Error: " + response.status);
+        console.log("HTTP-Error: " + response.status);
     }
 }
 
-export default { getGlobalStatus, getGlobalTimeline, getGlobalTopN, getCountryStatus, getCountryTimeline, getIndianRegionalData, getNews, getPatient };
+
+//get indian data 
+const getIndianStats = async ()=>{
+    let response=await fetch(`${Config.urls.covid19India_api}/data.json`);
+    if(response.ok)
+    {
+       // console.log(response);
+        let json=await response.json();
+        return json;
+    }
+    else
+    {
+        console.log("HTTP-Error: " + response.status);
+    }
+}
+
+export default { 
+    getGlobalStatus, 
+    getGlobalTimeline, 
+    getGlobalTopN, 
+    getCountryStatus, 
+    getCountryTimeline, 
+    getIndianRegionalData, 
+    getNews, 
+    getPatient, 
+    getIndianStats
+};

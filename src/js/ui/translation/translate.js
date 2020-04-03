@@ -22,10 +22,10 @@ const translate_ui = ()=>   {
     document.querySelector('.translate-title').textContent=v.TITLE[language];
     document.querySelector('.translate-sub-title').innerHTML=v.SUB_TITLE[language];
     document.querySelector('.translate-language-label').innerHTML=v.LANGUAGE[language];
-    document.querySelector('.translate-state').innerHTML=v.INDIAN_STATS_TABLE.STATE[language];
-    document.querySelector('.translate-indians').innerHTML=v.INDIAN_STATS_TABLE.INDIANS[language];
-    document.querySelector('.translate-foreigners').innerHTML=v.INDIAN_STATS_TABLE.FOREIGNERS[language];
-    document.querySelector('.translate-deaths').innerHTML=v.INDIAN_STATS_TABLE.DEATHS[language];
+    document.querySelector('.translate-state').innerHTML=v.INDIAN_STATS_TABLE.STATE[language].toUpperCase();
+    document.querySelector('.translate-table-head-cases').innerHTML=v.TOTAL_CASES[language].toUpperCase();
+    document.querySelector('.translate-table-head-active').innerHTML=v.COUNTRY_STATUS_TOTAL_ACTIVE[language].toUpperCase();
+    document.querySelector('.translate-table-head-deaths').innerHTML=v.INDIAN_STATS_TABLE.DEATHS[language].toUpperCase();
     // document.querySelector('.translate-global-status-headline').innerHTML=v.GLOBAL_STATUS_HEADLINE[language];
     document.querySelector('.translate-gbl-status-total-new-cases').innerHTML=v.GLOBAL_STATUS_TOTAL_NEW_CASES[language];
     document.querySelector('.translate-gbl-status-total-new-deaths').innerHTML=v.GLOBAL_STATUS_TOTAL_NEW_DEATHS[language];
@@ -46,16 +46,16 @@ const translate_ui = ()=>   {
     document.querySelector('.translate-country-status-total-unresolved').innerHTML=v.COUNTRY_STATUS_TOTAL_UNRESOLVED[language];
     // document.querySelector('.translate-country-timeline-headline').innerHTML=v.COUNTRY_TIMELINE_HEADLINE[language];
     // document.querySelector('.translate-gov-link-container-text').innerHTML=v.GOV_LINK_TEXT[language];
-    document.querySelector('.translate-country').innerHTML=v.COUNTRY[language];
-    document.querySelector('.translate-total-cases').innerHTML=v.TOTAL_CASES[language];
-    document.querySelector('.translate-total-cases-today').innerHTML=v.TOTAL_CASES_TODAY[language];
-    document.querySelector('.translate-total-deaths').innerHTML=v.TOTAL_DEATHS[language];
+    document.querySelector('.translate-country').innerHTML=v.COUNTRY[language].toUpperCase();
+    document.querySelector('.translate-total-cases').innerHTML=v.TOTAL_CASES[language].toUpperCase();
+    document.querySelector('.translate-total-cases-today').innerHTML=v.TOTAL_CASES_TODAY[language].toUpperCase();
+    document.querySelector('.translate-total-deaths').innerHTML=v.TOTAL_DEATHS[language].toUpperCase();
     // document.querySelector('.translate-take-care-stay-safe').innerHTML=v.TAKE_CARE_STAY_SAFE[language];
     // document.querySelector('.translate-github-cta-text').innerHTML=v.GITHUB_CTA_TEXT[language];
     document.querySelector('.translate-share-cta-text').innerHTML=v.SHARE_CTA_TEXT[language];
     // document.querySelector('.translate-does-donts-poster').setAttribute('src',`./src/documents/prevention_measures/${["ENGLISH","HINDI"].includes(language)?language.toLowerCase():"english"}_dos_donts.png`)
     // document.querySelector('.translate-').innerHTML=;
-    country_ui.getTimeline();
+    // country_ui.getTimeline();
     //update language value incase of reload
     let options = document.getElementById('choose-language').options;
     for(let option of options){
@@ -80,7 +80,7 @@ const translate_ui = ()=>   {
     for(let nodes of arr){
         let type = nodes[1].classList[0].split('-')[1];
         for(let node of nodes){
-            node.textContent=v[type][language];
+            node.textContent=v[type][language].toUpperCase();
         }
     }
 

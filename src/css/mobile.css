@@ -1,4 +1,11 @@
 @media (max-width: 767.98px){
+
+    table{
+        font-size: 10px !important;
+    }
+    .text-tiny{
+        font-size: 0.5rem;
+    }
     .fb-comments-container{
         padding: 0px !important;
         margin: 0px !important;

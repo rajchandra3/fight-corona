@@ -3,44 +3,149 @@ import Request from '../requests/main.js';
 import variables from '../ui/translation/variables.js';
 import Translate from '../ui/translation/translate.js';
 
-const getStatus = ()=>{
-    let promise = Request.getCountryStatus();
+const getPatientStatus = ()=>{
+    $('.card-carousel .card').remove();
+    let promise = Request.getPatient();
     promise.then((data)=>{
-        data=data.countrydata[0];
-        document.querySelector('.country-status-total').innerHTML=data.total_cases;
-        document.querySelector('.country-status-total-recovered').innerHTML=data.total_recovered;
-        document.querySelector('.country-status-total-unresolved').innerHTML=data.total_unresolved;
-        document.querySelector('.country-status-total-deaths').innerHTML=data.total_deaths;
-        document.querySelector('.country-status-total-new-cases').innerHTML=data.total_new_cases_today;
-        document.querySelector('.country-status-total-new-deaths').innerHTML=data.total_new_deaths_today;
-        document.querySelector('.country-status-total-active').innerHTML=data.total_active_cases;
-        document.querySelector('.country-status-total-serious').innerHTML=data.total_serious_cases;
+        let patientCount=data.length;
+        let no_of_paients_to_show=30;
+        const container = document.querySelector(".card-carousel");
+        let counter = 0;
+        for (let i=patientCount-1;counter<no_of_paients_to_show;i--) {
+            let patient=data[i];
+            if(patient.currentstatus || patient.notes || patient.gender || patient.agebracket || patient.detectedcity || patient.detecteddistrict){
+                counter++;
+                $('.container').find('.card-carousel').append(`
+                    <div class="card" id="${counter}">
+                    <div class="card-top row">
+                        <img src="${(patient.agebracket!="")?(patient.agebracket>60)?(patient.gender=="F"?'src/images/old-man.png':'src/images/old-woman.png'):((patient.agebracket<10)?'src/images/kid.png':(patient.gender=="M"?'src/images/man.png':'src/images/woman.png')):(patient.gender=="M"?'src/images/man.png':'src/images/woman.png')}" alt="" id="patient-img">
+                        <div class="card-top-text">
+                            <div class="patientId col" >
+                                Patient ID: ${patient.patientnumber}
+                            </div>
+                            <div class="age gender col">
+                                ${(patient.agebracket!="")?patient.agebracket+",":""} ${patient.gender==''?'':(patient.gender=='M'?'male':'female') || ""}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-bottom row">
+                        <div class="card-row" >
+                            <div class="card-img-div"><img src="src/images/reportedOn.svg" class="card-img"></div>
+                            <div class="card-text-div">Reported on ${patient.dateannounced.slice(0,5) ||''}</div>
+                        </div>
+                        <div class="card-row">
+                            <div class="card-img-div"><img src="src/images/status.svg" class="card-img"></div>
+                            <div class="card-text-div">${patient.currentstatus || 'Status unknown'}</div>
+                        </div>
+                        <div class="card-row">
+                            <div class="card-img-div"><img src="src/images/notes.svg" class="card-img"></div>
+                            <div class="notes card-text-div">${patient.notes || 'No additional information provided'}</div>
+                        </div>
+                        <div class="card-row">
+                            <div class="card-img-div"><img src="src/images/place.svg" class="card-img "></div>
+                            <div class="card-text-div">${patient.detectedcity+(patient.detectedcity && patient.detecteddistrict?', '+patient.detecteddistrict :'') || 'Place unknown'}</div>
+                        </div>
+                        <div class="card-row">
+                            <div class="card-text-div">
+                                
+                                <ul class="text-center">
+                                    <ol>
+                                        <a href="${patient.source1}" target="_blank">${patient.source1!=""?"source":''}</a>
+                                    </ol>
+                                    <ol>
+                                        <a href="${patient.source2}" target="_blank">${patient.source2!=""?"source":''}</a>
+                                    </ol>
+                                    <ol>
+                                        <a href="${patient.source3}" target="_blank">${patient.source3!=""?"source":''}</a>
+                                    </ol>
+                                </ul>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                `);
+    
+                if(i+no_of_paients_to_show === patientCount+1){
+                    var newScript = document.createElement("script");
+                    newScript.type = "text/javascript";
+                    newScript.setAttribute("async", "true");
+                    newScript.setAttribute("src", './src/js/ui/components/patient_card.js');
+                    
+                    if(newScript.readyState) {
+                        newScript.onreadystatechange = function() {
+                            if(/loaded|complete/.test(newScript.readyState)) console.log('loaded script');
+                        }
+                    } else {
+                        newScript.addEventListener("load",()=>console.log('added event listener to script'));
+                    }
+                    
+                    document.documentElement.firstChild.appendChild(newScript);
+                }
+            }
+            
+        }
     })
 }
 
-const getTimeline = ()=>{
+const setIndianData = ()=>{
     let language = Translate.get_language();
-    let promise = Request.getCountryTimeline();
+    //using rootnet api
+    let promise = Request.getIndianStats();
     promise.then((data)=>{
-        //using thevirustacker api
-        // data = data[0];
-        // const entries = Object.entries(data);
-        // let total_cases_count=[];
-        // let x_axis=[];
-        // for (const [date, local_data] of entries) {
-        //     if(date!=='stat'){
-        //         total_cases_count.push(local_data.total_cases);
-        //         x_axis.push(date);
-        //     }
-        // }
-        //using rootnet api
+        let indian_data = {
+            today:{},
+            country:{},
+            timeline:[],
+            states:[]
+        }
+        //get today's data 
+        indian_data.today={
+            confirmed:data.key_values[0].confirmeddelta,
+            deaths:data.key_values[0].deceaseddelta,
+            recovered:data.key_values[0].recovereddelta
+        };
+        //get statewise data and country data 
+        for(let state_data of data.statewise){
+            state_data.state==="Total"?
+                indian_data.country=state_data:
+                indian_data.states.push(state_data);
+        }
+
+        //get timeline
+        indian_data.timeline=data.cases_time_series;
+        
+        //show indian stats
+        document.querySelector('.country-status-total').innerHTML=indian_data.country.confirmed;
+        document.querySelector('.country-status-total-recovered').innerHTML=indian_data.country.recovered;
+        document.querySelector('.country-status-total-deaths').innerHTML=indian_data.country.deaths;
+        document.querySelector('.country-status-total-new-cases').innerHTML=indian_data.country.deltaconfirmed;
+        document.querySelector('.country-status-total-new-deaths').innerHTML=indian_data.country.deltadeaths;
+        document.querySelector('.country-status-total-active').innerHTML=indian_data.country.active;
+
+        //populate states data 
+        $(".indian-stats-tbody tr").remove();
+        document.querySelector('.translate-indian-stats-caption').style.display='none';
+        for(let state_data of indian_data.states){
+            $('table').find('.indian-stats-tbody').append(`
+                <tr>
+                    <th scope="row">${state_data.state}</th>
+                    <td>${state_data.confirmed}<span class="text-tiny font-weight-bold ${state_data.delta.confirmed<=0?"text-success":"text-danger"}">(${state_data.delta.confirmed>0?"+"+state_data.delta.confirmed:state_data.delta.confirmed})</span></td>
+                    <td>${state_data.deaths}<span class="text-tiny font-weight-bold ${state_data.delta.deaths<=0?"text-success":"text-danger"}">(${state_data.delta.deaths>0?"+"+state_data.delta.deaths:state_data.delta.deaths})</span></td>
+                    <td>${state_data.active}<span class="text-tiny font-weight-bold ${state_data.delta.active<=0?"text-success":"text-danger"}">(${state_data.delta.active>0?"+"+state_data.delta.active:state_data.delta.active})</span></td>
+                </tr>`);
+        }
+
+        //make timeline 
         let total_cases_count=[];
         let total_deaths=[];
+        let total_recovered=[];
         let x_axis=[];
-        for( let regional_data of data){
-            total_deaths.push(regional_data.summary.deaths);
-            total_cases_count.push(regional_data.summary.total);
-            x_axis.push(regional_data.day);
+        for( let day_data of indian_data.timeline){
+            total_deaths.push(Number(day_data.totaldeceased));
+            total_cases_count.push(Number(day_data.totalconfirmed));
+            total_recovered.push(Number(day_data.totalrecovered));
+            x_axis.push(day_data.date);
         }
         let chart_attributes = {
             element:'country-timeline',
@@ -65,6 +170,12 @@ const getTimeline = ()=>{
                     symbol: 'circle'
                 },
                 data: total_deaths
+            },{
+                name: variables.COUNTRY_STATUS_TOTAL_RECOVERED[language],
+                marker: {
+                    symbol: 'circle'
+                },
+                data: total_recovered
             }],
             plotOptions:{
                 radius: 4,
@@ -76,108 +187,9 @@ const getTimeline = ()=>{
         document.querySelector('.country-timeline-description').innerHTML=chart_attributes.description;
         LineChart.plotChart(chart_attributes,x_axis,total_cases_count);
     })
+    //remove toast
+    $('.toast').toast('hide');
 }
 
-const getIndianStats = ()=>{
-    //using rootnet api
-    let promise = Request.getIndianRegionalData();
-    promise.then((res)=>{
-        let data=res.data;
-        let new_data=data[data.length-1];
-        let old_data=data[data.length-2];
-        new_data=new_data.regional;
-        old_data=old_data.regional;
-        $(".indian-stats-tbody tr").remove();
-        document.querySelector('.translate-indian-stats-caption').innerHTML=`last updated ${moment(new Date(res.lastOriginUpdate), "YYYYMMDD").fromNow()}`;
-        for(let d1 of new_data){
-            for(let d2 of old_data){
-                if(d1.loc === d2.loc){
-                    let difference_indian = d1.confirmedCasesIndian-d2.confirmedCasesIndian;
-                    let difference_foreigners = d1.confirmedCasesForeign-d2.confirmedCasesForeign;
-                    let difference_deaths = d1.deaths-d2.deaths;
-                    $('table').find('.indian-stats-tbody').append(`
-                        <tr>
-                            <th scope="row">${d1.loc}</th>
-                            <td>${d1.confirmedCasesIndian}<span class="text-tiny font-weight-bold ${difference_indian<=0?"text-success":"text-danger"}">(${difference_indian>0?"+"+difference_indian:difference_indian})</span></td>
-                            <td>${d1.confirmedCasesForeign}<span class="text-tiny font-weight-bold ${difference_foreigners<=0?"text-success":"text-danger"}">(${difference_foreigners>0?"+"+difference_foreigners:difference_foreigners})</span></td>
-                            <td>${d1.deaths}<span class="text-tiny font-weight-bold ${difference_deaths<=0?"text-success":"text-danger"}">(${difference_deaths>0?"+"+difference_deaths:difference_deaths})</span></td>
-                        </tr>`);
-                }
-            }
-        }
-    })
-}
 
-const getPatientStatus = ()=>{
-    $('.card-carousel .card').remove();
-    let promise = Request.getPatient();
-    promise.then((data)=>{
-        data=data.rawPatientData;
-        let patientCount=data.length;
-        let no_of_paients_to_show=20;
-        const container = document.querySelector(".card-carousel");
-        
-        for (let i=patientCount-1;i>patientCount-no_of_paients_to_show;i--) {
-            let patient=data[i];
-            $('.container').find('.card-carousel').append(`
-                <div class="card" id="${patientCount-i}">
-                <div class="card-top row">
-                    <img src="${(patient.ageEstimate!="")?(patient.ageEstimate>60)?(patient.gender=="male"?'src/images/old-man.png':'src/images/old-woman.png'):((patient.ageEstimate<10)?'src/images/kid.png':(patient.gender=="male"?'src/images/man.png':'src/images/woman.png')):(patient.gender=="male"?'src/images/man.png':'src/images/woman.png')}" alt="" id="patient-img">
-                    <div class="card-top-text">
-                        <div class="patientId col" >
-                            Patient ID: ${patient.patientId}
-                        </div>
-                        <div class="age gender col">
-                            ${(patient.ageEstimate!="")?patient.ageEstimate+",":""} ${patient.gender || ""}
-                        </div>
-                    </div>
-                </div>
-                <div class="card-bottom row">
-                    <div class="card-row" >
-                        <div class="card-img-div"><img src="src/images/reportedOn.svg" class="card-img"></div>
-                        <div class="card-text-div">Reported on ${patient.reportedOn.slice(0,5) ||''}</div>
-                    </div>
-                    <div class="card-row">
-                        <div class="card-img-div"><img src="src/images/status.svg" class="card-img"></div>
-                        <div class="card-text-div">${patient.status || 'Status unknown'}</div>
-                    </div>
-                    <div class="card-row">
-                        <div class="card-img-div"><img src="src/images/notes.svg" class="card-img"></div>
-                        <div class="notes card-text-div">${patient.notes || 'No additional information provided'}</div>
-                    </div>
-                    <div class="card-row">
-                        <div class="card-img-div"><img src="src/images/place.svg" class="card-img "></div>
-                        <div class="card-text-div">${patient.city || 'Place unknown'}</div>
-                    </div>
-                    </div>
-                </div>
-            </div>
-            `);
-
-            if(i+no_of_paients_to_show === patientCount+1){
-                var newScript = document.createElement("script");
-                newScript.type = "text/javascript";
-                newScript.setAttribute("async", "true");
-                newScript.setAttribute("src", './src/js/ui/components/patient_card.js');
-                
-                if(newScript.readyState) {
-                    newScript.onreadystatechange = function() {
-                        if(/loaded|complete/.test(newScript.readyState)) console.log('loaded script');
-                    }
-                } else {
-                    newScript.addEventListener("load",()=>console.log('added event listener to script'));
-                }
-                
-                document.documentElement.firstChild.appendChild(newScript);
-            }
-            
-        }
-    })
-}
-
-// (patient.gender==male?'src/images/old-man.png':'src/images/old-woman.png')
-{/* <a href="${patient.sources && patient.sources[0]}" target="_blank" class="patient-source">Source</a> */}
-
-
-
-export default { getStatus, getTimeline, getIndianStats,getPatientStatus }
+export default { getPatientStatus, setIndianData }
