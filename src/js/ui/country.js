@@ -129,9 +129,9 @@ const setIndianData = ()=>{
             $('table').find('.indian-stats-tbody').append(`
                 <tr>
                     <th scope="row">${state_data.state}</th>
-                    <td>${state_data.confirmed}<span class="text-tiny font-weight-bold ${state_data.delta.confirmed<=0?"text-success":"text-danger"}">(${state_data.delta.confirmed>0?"+"+state_data.delta.confirmed:state_data.delta.confirmed})</span></td>
-                    <td>${state_data.deaths}<span class="text-tiny font-weight-bold ${state_data.delta.deaths<=0?"text-success":"text-danger"}">(${state_data.delta.deaths>0?"+"+state_data.delta.deaths:state_data.delta.deaths})</span></td>
-                    <td>${state_data.active}<span class="text-tiny font-weight-bold ${state_data.delta.active<=0?"text-success":"text-danger"}">(${state_data.delta.active>0?"+"+state_data.delta.active:state_data.delta.active})</span></td>
+                    <td>${state_data.confirmed}<span class="text-tiny font-weight-bold ${state_data.deltaconfirmed<=0?"text-success":"text-danger"}">(${state_data.deltaconfirmed>0?"+"+state_data.deltaconfirmed:state_data.deltaconfirmed})</span></td>
+                    <td>${state_data.deaths}<span class="text-tiny font-weight-bold ${state_data.deltadeaths<=0?"text-success":"text-danger"}">(${state_data.deltadeaths>0?"+"+state_data.deltadeaths:state_data.deltadeaths})</span></td>
+                    <td>${state_data.active}<span class="text-tiny font-weight-bold ${state_data.deltarecovered>0?"text-success":"text-danger"}">(${state_data.deltarecovered>0?"+"+state_data.deltarecovered:state_data.deltarecovered})</span></td>
                 </tr>`);
         }
 
