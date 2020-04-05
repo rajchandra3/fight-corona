@@ -48,7 +48,7 @@ const getPatientStatus = ()=>{
                         <div class="card-row">
                             <div class="card-text-div">
                                 
-                                <ul class="text-center">
+                                <ul class="">
                                     <ol>
                                         <a href="${patient.source1}" target="_blank">${patient.source1!=""?"source":''}</a>
                                     </ol>
@@ -93,18 +93,13 @@ const setIndianData = ()=>{
     //using rootnet api
     let promise = Request.getIndianStats();
     promise.then((data)=>{
+        console.log(data);
         let indian_data = {
             today:{},
             country:{},
             timeline:[],
             states:[]
         }
-        //get today's data 
-        indian_data.today={
-            confirmed:data.key_values[0].confirmeddelta,
-            deaths:data.key_values[0].deceaseddelta,
-            recovered:data.key_values[0].recovereddelta
-        };
         //get statewise data and country data 
         for(let state_data of data.statewise){
             state_data.state==="Total"?
@@ -112,9 +107,15 @@ const setIndianData = ()=>{
                 indian_data.states.push(state_data);
         }
 
+        //get today's data 
+        indian_data.today={
+            confirmed:indian_data.country.deltaconfirmed,
+            deaths:indian_data.country.deltadeaths,
+            recovered:indian_data.country.deltarecovered
+        };
         //get timeline
         indian_data.timeline=data.cases_time_series;
-        
+        console.log('checkpoint:',indian_data)
         //show indian stats
         document.querySelector('.country-status-total').innerHTML=indian_data.country.confirmed;
         document.querySelector('.country-status-total-recovered').innerHTML=indian_data.country.recovered;
