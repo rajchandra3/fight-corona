@@ -93,7 +93,6 @@ const setIndianData = ()=>{
     //using rootnet api
     let promise = Request.getIndianStats();
     promise.then((data)=>{
-        console.log(data);
         let indian_data = {
             today:{},
             country:{},
@@ -115,7 +114,6 @@ const setIndianData = ()=>{
         };
         //get timeline
         indian_data.timeline=data.cases_time_series;
-        console.log('checkpoint:',indian_data)
         //show indian stats
         document.querySelector('.country-status-total').innerHTML=indian_data.country.confirmed;
         document.querySelector('.country-status-total-recovered').innerHTML=indian_data.country.recovered;
