@@ -48,7 +48,7 @@ const getPatientStatus = ()=>{
                         <div class="card-row">
                             <div class="card-text-div">
                                 
-                                <ul class="text-center">
+                                <ul class="">
                                     <ol>
                                         <a href="${patient.source1}" target="_blank">${patient.source1!=""?"source":''}</a>
                                     </ol>
@@ -99,12 +99,6 @@ const setIndianData = ()=>{
             timeline:[],
             states:[]
         }
-        //get today's data 
-        indian_data.today={
-            confirmed:data.key_values[0].confirmeddelta,
-            deaths:data.key_values[0].deceaseddelta,
-            recovered:data.key_values[0].recovereddelta
-        };
         //get statewise data and country data 
         for(let state_data of data.statewise){
             state_data.state==="Total"?
@@ -112,9 +106,14 @@ const setIndianData = ()=>{
                 indian_data.states.push(state_data);
         }
 
+        //get today's data 
+        indian_data.today={
+            confirmed:indian_data.country.deltaconfirmed,
+            deaths:indian_data.country.deltadeaths,
+            recovered:indian_data.country.deltarecovered
+        };
         //get timeline
         indian_data.timeline=data.cases_time_series;
-        
         //show indian stats
         document.querySelector('.country-status-total').innerHTML=indian_data.country.confirmed;
         document.querySelector('.country-status-total-recovered').innerHTML=indian_data.country.recovered;
@@ -130,9 +129,9 @@ const setIndianData = ()=>{
             $('table').find('.indian-stats-tbody').append(`
                 <tr>
                     <th scope="row">${state_data.state}</th>
-                    <td>${state_data.confirmed}<span class="text-tiny font-weight-bold ${state_data.delta.confirmed<=0?"text-success":"text-danger"}">(${state_data.delta.confirmed>0?"+"+state_data.delta.confirmed:state_data.delta.confirmed})</span></td>
-                    <td>${state_data.deaths}<span class="text-tiny font-weight-bold ${state_data.delta.deaths<=0?"text-success":"text-danger"}">(${state_data.delta.deaths>0?"+"+state_data.delta.deaths:state_data.delta.deaths})</span></td>
-                    <td>${state_data.active}<span class="text-tiny font-weight-bold ${state_data.delta.active<=0?"text-success":"text-danger"}">(${state_data.delta.active>0?"+"+state_data.delta.active:state_data.delta.active})</span></td>
+                    <td>${state_data.confirmed}<span class="text-tiny font-weight-bold ${state_data.deltaconfirmed<=0?"text-success":"text-danger"}">(${state_data.deltaconfirmed>0?"+"+state_data.deltaconfirmed:state_data.deltaconfirmed})</span></td>
+                    <td>${state_data.deaths}<span class="text-tiny font-weight-bold ${state_data.deltadeaths<=0?"text-success":"text-danger"}">(${state_data.deltadeaths>0?"+"+state_data.deltadeaths:state_data.deltadeaths})</span></td>
+                    <td>${state_data.active}<span class="text-tiny font-weight-bold ${state_data.deltarecovered>0?"text-success":"text-danger"}">(${state_data.deltarecovered>0?"+"+state_data.deltarecovered:state_data.deltarecovered})</span></td>
                 </tr>`);
         }
 
