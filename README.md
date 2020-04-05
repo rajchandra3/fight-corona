@@ -41,6 +41,9 @@ Follow these steps
 ### Worldwide Datapoints
 - [https://thevirustracker.com/](https://thevirustracker.com/)
 
+### District Map
+- [https://github.com/guneetnarula/covid19-in](https://github.com/guneetnarula/covid19-in)
+
 # Thanks to Contributors
 - [@yedhukrishnan](https://github.com/yedhukrishnan)
     - For Malayalam Translation [See #1](https://github.com/rajchandra3/fight-corona/pull/1)
