@@ -51,9 +51,10 @@ Follow these steps
     - News section UI [See #9](https://github.com/rajchandra3/fight-corona/pull/9)
 - [@r-ush](https://github.com/r-ush)
     - Patient cards UI [See #12](https://github.com/rajchandra3/fight-corona/pull/12)
+    - District data UI [See #19](https://github.com/rajchandra3/fight-corona/pull/19)
 - [@rish07](https://github.com/rish07)
     - For Marathi Translation [See #13](https://github.com/rajchandra3/fight-corona/pull/13)
 - [@noob-master147](https://github.com/noob-master147)
-    - For Urdu Translation [See #13](https://github.com/rajchandra3/fight-corona/pull/16)
+    - For Urdu Translation [See #16](https://github.com/rajchandra3/fight-corona/pull/16)
 
 
