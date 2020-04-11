@@ -88,8 +88,60 @@ const getPatientStatus = ()=>{
     })
 }
 
-const setIndianData = ()=>{
+const setTimeline = (indian_data)=>{
     let language = Translate.get_language();
+    //make timeline 
+    let total_cases_count=[];
+    let total_deaths=[];
+    let total_recovered=[];
+    let x_axis=[];
+    for( let day_data of indian_data.timeline){
+        total_deaths.push(Number(day_data.totaldeceased));
+        total_cases_count.push(Number(day_data.totalconfirmed));
+        total_recovered.push(Number(day_data.totalrecovered));
+        x_axis.push(day_data.date);
+    }
+    let chart_attributes = {
+        element:'country-timeline',
+        title:variables.CHART.TITLE[language],
+        source:variables.CHART.SOURCE[language],
+        yAxis:{
+            title:{text:""}
+        },
+        xAxis:{
+            categories:x_axis
+        },
+        total_cases_count,
+        series:[{
+            name: variables.CHART.SERIES_NAME[language],
+            marker: {
+                symbol: 'circle'
+            },
+            data: total_cases_count
+        },{
+            name: variables.TOTAL_DEATHS[language],
+            marker: {
+                symbol: 'circle'
+            },
+            data: total_deaths
+        },{
+            name: variables.COUNTRY_STATUS_TOTAL_RECOVERED[language],
+            marker: {
+                symbol: 'circle'
+            },
+            data: total_recovered
+        }],
+        plotOptions:{
+            radius: 4,
+            lineColor: '#666',
+            lineWidth: 1
+        },
+        description:variables.CHART.DESCRIPTION[language],
+    }
+    document.querySelector('.country-timeline-description').innerHTML=chart_attributes.description;
+    LineChart.plotChart(chart_attributes,x_axis,total_cases_count);
+}
+const setIndianData = ()=>{
     //using rootnet api
     let promise = Request.getIndianStats();
     promise.then((data)=>{
@@ -134,57 +186,7 @@ const setIndianData = ()=>{
                     <td>${state_data.active}<span class="text-tiny font-weight-bold ${state_data.deltarecovered>0?"text-success":"text-danger"}">(${state_data.deltarecovered>0?"+"+state_data.deltarecovered:state_data.deltarecovered})</span></td>
                 </tr>`);
         }
-
-        //make timeline 
-        let total_cases_count=[];
-        let total_deaths=[];
-        let total_recovered=[];
-        let x_axis=[];
-        for( let day_data of indian_data.timeline){
-            total_deaths.push(Number(day_data.totaldeceased));
-            total_cases_count.push(Number(day_data.totalconfirmed));
-            total_recovered.push(Number(day_data.totalrecovered));
-            x_axis.push(day_data.date);
-        }
-        let chart_attributes = {
-            element:'country-timeline',
-            title:variables.CHART.TITLE[language],
-            source:variables.CHART.SOURCE[language],
-            yAxis:{
-                title:{text:""}
-            },
-            xAxis:{
-                categories:x_axis
-            },
-            total_cases_count,
-            series:[{
-                name: variables.CHART.SERIES_NAME[language],
-                marker: {
-                    symbol: 'circle'
-                },
-                data: total_cases_count
-            },{
-                name: variables.TOTAL_DEATHS[language],
-                marker: {
-                    symbol: 'circle'
-                },
-                data: total_deaths
-            },{
-                name: variables.COUNTRY_STATUS_TOTAL_RECOVERED[language],
-                marker: {
-                    symbol: 'circle'
-                },
-                data: total_recovered
-            }],
-            plotOptions:{
-                radius: 4,
-                lineColor: '#666',
-                lineWidth: 1
-            },
-            description:variables.CHART.DESCRIPTION[language],
-        }
-        document.querySelector('.country-timeline-description').innerHTML=chart_attributes.description;
-        LineChart.plotChart(chart_attributes,x_axis,total_cases_count);
+        setTimeline(indian_data);
     })
     //remove toast
     $('.toast').toast('hide');

@@ -56,6 +56,7 @@ const translate_ui = ()=>   {
     // document.querySelector('.translate-does-donts-poster').setAttribute('src',`./src/documents/prevention_measures/${["ENGLISH","HINDI"].includes(language)?language.toLowerCase():"english"}_dos_donts.png`)
     // document.querySelector('.translate-').innerHTML=;
     // country_ui.getTimeline();
+    document.querySelector('#district-cta').innerHTML=v.district_page_cta[language];
     //update language value incase of reload
     let options = document.getElementById('choose-language').options;
     for(let option of options){
