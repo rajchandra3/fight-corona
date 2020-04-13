@@ -20,7 +20,7 @@
 - [Bengali](https://corona-go.info?lang=BENGALI&medium=github_readme)
 - [Punjabi](https://corona-go.info?lang=PUNJABI&medium=github_readme)
 - [Tamil](https://corona-go.info?lang=TAMIL&medium=github_readme)
-- [Telgue](https://corona-go.info?lang=TELGUE&medium=github_readme)
+- [Telugu](https://corona-go.info?lang=TELGUE&medium=github_readme)
 - [Malayalam](https://corona-go.info?lang=MALAYALAM&medium=github_readme)
 - [Urdu](https://corona-go.info?lang=URDU&medium=github_readme)
 
