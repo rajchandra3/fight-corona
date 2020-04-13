@@ -12,7 +12,7 @@
 - Worldwide stats
 - World's top infected countries
 - Live News updates
-- Live infected Patient details (lastest 20)
+- Live infected Patient details (latest 20)
 
 # Available languages
 - [Hindi](https://corona-go.info?lang=HINDI&medium=github_readme)
