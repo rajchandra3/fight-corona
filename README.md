@@ -10,7 +10,7 @@
 - Indian District wise stats
 - Indian time series
 - Worldwide stats
-- World's top infected counties
+- World's top infected countries
 - Live News updates
 - Live infected Patient details (lastest 20)
 
