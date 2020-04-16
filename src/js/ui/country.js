@@ -165,7 +165,7 @@ const setIndianData = ()=>{
             recovered:indian_data.country.deltarecovered
         };
         //get timeline
-        indian_data.timeline=data.cases_time_series;
+        indian_data.timeline=data.cases_time_series.slice(data.cases_time_series.length-30,data.cases_time_series.length);
         //show indian stats
         document.querySelector('.country-status-total').innerHTML=indian_data.country.confirmed;
         document.querySelector('.country-status-total-recovered').innerHTML=indian_data.country.recovered;
