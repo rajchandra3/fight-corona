@@ -141,6 +141,7 @@ const setTimeline = (indian_data)=>{
     document.querySelector('.country-timeline-description').innerHTML=chart_attributes.description;
     LineChart.plotChart(chart_attributes,x_axis,total_cases_count);
 }
+
 const setIndianData = ()=>{
     //using rootnet api
     let promise = Request.getIndianStats();
