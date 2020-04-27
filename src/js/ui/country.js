@@ -90,6 +90,9 @@ const getPatientStatus = ()=>{
 
 const setTimeline = (indian_data)=>{
     let language = Translate.get_language();
+    //get range
+    let range=Number(document.querySelector('#choose-range').value || 3);
+    indian_data.timeline=indian_data.timeline.slice(indian_data.timeline.length-range,indian_data.timeline.length);
     //make timeline 
     let total_cases_count=[];
     let total_deaths=[];
@@ -165,8 +168,6 @@ const setIndianData = ()=>{
             deaths:indian_data.country.deltadeaths,
             recovered:indian_data.country.deltarecovered
         };
-        //get timeline
-        indian_data.timeline=data.cases_time_series.slice(data.cases_time_series.length-30,data.cases_time_series.length);
         //show indian stats
         document.querySelector('.country-status-total').innerHTML=indian_data.country.confirmed;
         document.querySelector('.country-status-total-recovered').innerHTML=indian_data.country.recovered;
@@ -187,10 +188,17 @@ const setIndianData = ()=>{
                     <td>${state_data.active}<span class="text-tiny font-weight-bold ${state_data.deltarecovered>0?"text-success":"text-danger"}">(${state_data.deltarecovered>0?"+"+state_data.deltarecovered:state_data.deltarecovered})</span></td>
                 </tr>`);
         }
+
+        //set timeline
+        indian_data.timeline=data.cases_time_series;
+        document.querySelector('#max-range').innerHTML=`${indian_data.timeline.length-1} Days`;
+        document.querySelector('#max-range').value=indian_data.timeline.length-1;
         setTimeline(indian_data);
     })
     //remove toast
     $('.toast').toast('hide');
+    //add event listener to select range
+    document.querySelector('#choose-range').addEventListener('input',setIndianData);
 }
 
 
